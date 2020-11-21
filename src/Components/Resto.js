@@ -1,18 +1,12 @@
 import React from 'react';
 import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 import { ThemeProvider } from '@material-ui/styles';
 import Container from '@material-ui/core/Container';
 import Image from 'material-ui-image';
-import { lightBlue } from '@material-ui/core/colors';
-import { useSizedIconButtonStyles } from '@mui-treasury/styles/iconButton/sized';
 import AddIcon from '@material-ui/icons/Add';
 import IconButton from '@material-ui/core/IconButton';
 const theme = createMuiTheme({
@@ -34,6 +28,9 @@ const theme = createMuiTheme({
 const useStyles = makeStyles({
     root: {
         minWidth: 275,
+        alignItems: "center",
+        marginRight: "auto",
+        marginLeft: "auto",
     },
 
 
@@ -59,7 +56,6 @@ const useStyles = makeStyles({
 
 const Resto = () => {
     const classes = useStyles();
-    const iconBtnStyles = useSizedIconButtonStyles({ padding: 6 });
 
     return ( <
         ThemeProvider theme = { theme } >
@@ -87,9 +83,7 @@ const Resto = () => {
         <
         /IconButton> <
         /div> <
-        /CardContent>
-
-        <
+        /CardContent> <
         CardActions >
         <
         /CardActions> <

@@ -3,9 +3,10 @@ import { Container } from '@material-ui/core';
 import Nav from './Components/Nav';
 import SearchBar from './Components/SearchBar';
 import Grid from '@material-ui/core/Grid';
-import Resto from './Components/Resto';
-import { lightBlue } from '@material-ui/core/colors';
+import RestoInfo from './Components/RestoInfo';
 import { makeStyles } from '@material-ui/core/styles';
+import Resto from './Components/Resto';
+
 const useStyles = makeStyles({
     root: {
         minWidth: 275,
