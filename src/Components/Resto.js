@@ -13,7 +13,8 @@ import Container from '@material-ui/core/Container';
 import Image from 'material-ui-image';
 import { lightBlue } from '@material-ui/core/colors';
 import { useSizedIconButtonStyles } from '@mui-treasury/styles/iconButton/sized';
-
+import AddIcon from '@material-ui/icons/Add';
+import IconButton from '@material-ui/core/IconButton';
 const theme = createMuiTheme({
     palette: {
         primary: {
@@ -23,9 +24,9 @@ const theme = createMuiTheme({
             contrastText: '#fafafa',
         },
         secondary: {
-            light: '#ff7043',
-            main: '#ff7043',
-            dark: '#ff7043',
+            light: '#ff5722',
+            main: '#ff5722',
+            dark: '#ff5722',
             contrastText: '#fafafa',
         },
     },
@@ -39,41 +40,31 @@ const useStyles = makeStyles({
     RestoContainer: {
         backgroundColor: '#bbdefb',
         display: 'block',
-        width: '45vw',
+        width: '45vh',
         transitionDuration: '0.3s',
-        height: '50vw'
+        height: '53vh'
     },
 
-    bullet: {
-        display: 'inline-Sblock',
-        margin: '0 2px',
+    AddResto: {
+        justifyContent: "space-between",
         transform: 'scale(0.8)',
+        padding: theme.spacing(0, 2),
+        position: 'absolute',
+        display: 'flex',
+        alignItems: 'center',
     },
-    paper: {
-        flex: 1,
-        padding: '2px',
-        backgroundColor: '#9e9e9e',
-        display: 'block',
-        transitionDuration: '0.3s',
-        color: 'grey',
 
-    },
-    title: {
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    },
+
 });
 
 const Resto = () => {
     const classes = useStyles();
     const iconBtnStyles = useSizedIconButtonStyles({ padding: 6 });
 
-    return (
-
+    return ( <
+        ThemeProvider theme = { theme } >
         <
-        div >
+        div className = { classes.root } >
         <
         Container >
         <
@@ -84,16 +75,28 @@ const Resto = () => {
         <
         Image src = "/photos/images.jpg" / >
         <
-        Paper className = { classes.paper } > xs = 6 < /Paper> < /
-        CardContent >
+        div className = { classes.AddResto } >
+        <
+        Button variant = "contained"
+        color = "secondary" >
+        Bebabel <
+        /Button> <
+        IconButton color = "secondary" >
+        <
+        AddIcon / >
+        <
+        /IconButton> <
+        /div> <
+        /CardContent>
 
         <
         CardActions >
         <
-        /CardActions> < /
-        Card > <
-        /Container> < /
-        div >
+        /CardActions> <
+        /Card> <
+        /Container> <
+        /div> <
+        /ThemeProvider>
     );
 }
 
