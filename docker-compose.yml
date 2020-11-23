@@ -1,0 +1,12 @@
+version: '3'
+services:
+  postgres-db:
+    container_name: RolaDb
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: Rola
+      POSTGRES_PASSWORD: cmepass
+      POSTGRES_DB: RolaDb
