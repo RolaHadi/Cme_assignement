@@ -1,5 +1,7 @@
 package cme.hadi.rola.model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,11 +13,8 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
-@Table(name="VISITS")
-@NoArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-
-public class Visit implements Serializable {
+@Table(name="Visit")
+public class Visit {
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +28,9 @@ public class Visit implements Serializable {
     public Visit(Restaurant restaurant, Date date) {
         this.restaurant = restaurant;
         this.date = date;
+    }
+
+    public Visit() {
     }
 }
 
