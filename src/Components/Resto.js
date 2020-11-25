@@ -28,13 +28,13 @@ const theme = createMuiTheme({
 const useStyles = makeStyles({
     root: {
         minWidth: 275,
-        alignItems: "center",
-        marginRight: "auto",
-        marginLeft: "auto",
+        alignItems:"center",
+      marginRight:"auto",
+      marginLeft:"auto",
     },
 
 
-    RestoContainer: {
+    RestoContainer:{
         backgroundColor: '#bbdefb',
         display: 'block',
         width: '45vh',
@@ -50,47 +50,36 @@ const useStyles = makeStyles({
         display: 'flex',
         alignItems: 'center',
     },
-
-
+  
+   
 });
 
 const Resto = () => {
     const classes = useStyles();
 
-    return ( <
-        ThemeProvider theme = { theme } >
-        <
-        div className = { classes.root } >
-        <
-        Container >
-        <
-        Card className = { classes.RestoContainer } >
+    return ( 
+        <ThemeProvider theme={theme}>
+        <div className={classes.root}>
+            <Container >
+    <Card className={classes.RestoContainer} >
 
-        <
-        CardContent >
-        <
-        Image src = "/photos/images.jpg" / >
-        <
-        div className = { classes.AddResto } >
-        <
-        Button variant = "contained"
-        color = "secondary" >
-        Bebabel <
-        /Button> <
-        IconButton color = "secondary" >
-        <
-        AddIcon / >
-        <
-        /IconButton> <
-        /div> <
-        /CardContent> <
-        CardActions >
-        <
-        /CardActions> <
-        /Card> <
-        /Container> <
-        /div> <
-        /ThemeProvider>
+      <CardContent>
+          <Image src="/photos/bebabel.jpg" />
+          <div className={classes.AddResto}>
+          <Button variant="contained" color="secondary">
+          Bebabel
+        </Button>
+        <IconButton color="secondary" >
+          <AddIcon />
+        </IconButton>
+        </div>
+      </CardContent>
+      <CardActions>
+      </CardActions>
+    </Card>
+    </Container>
+    </div>
+    </ThemeProvider>
     );
 }
 

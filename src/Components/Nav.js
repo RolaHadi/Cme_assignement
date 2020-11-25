@@ -6,43 +6,39 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 
 const theme = createMuiTheme({
-    palette: {
-        primary: {
-            light: '#fafafa',
-            main: '#03a9f4',
-            dark: '#03a9f4',
-            contrastText: '#fafafa',
-        },
-        secondary: {
-            light: '#ff5722',
-            main: '#ff5722',
-            dark: '#ff5722',
-            contrastText: '#fafafa',
-        },
+  palette: {
+    primary: {
+      light: '#fafafa',
+      main: '#03a9f4',
+      dark: '#03a9f4',
+      contrastText: '#fafafa',
     },
+    secondary: {
+      light: '#ff5722',
+      main: '#ff5722',
+      dark: '#ff5722',
+      contrastText: '#fafafa',
+    },
+  },
 });
 
 const useStyles = makeStyles((theme) => ({
 
-    navStyle: {
+    navStyle: { 
         position: "static"
     }
 }));
 
 const Nav = () => {
     const classes = useStyles();
-    return ( <
-        div >
-        <
-        ThemeProvider theme = { theme } >
-        <
-        AppBar className = "classes.navStyle"
-        color = "white" >
-        <
-        Toolbar variant = "dense" > < /Toolbar>  <
-        /AppBar>  <
-        / ThemeProvider> <
-        /div>
+    return ( 
+        <div >
+           < ThemeProvider theme={theme}>
+        <AppBar className = "classes.navStyle" color="white">
+        <Toolbar variant = "dense" > </Toolbar> 
+        </AppBar> 
+        </ ThemeProvider>
+        </div>
     );
 }
 
