@@ -1,10 +1,10 @@
 package cme.hadi.rola.model;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -13,8 +13,10 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name="Restaurant")
-public class Restaurant {
+@Table(name="RESTAURANTS")
+@NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+public class Restaurant implements Serializable {
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,10 +27,8 @@ public class Restaurant {
     private String address;
     private String phone;
     private String imageUrl;
-
-    @OneToMany(mappedBy="restaurant",cascade = CascadeType.MERGE)
-    @JsonIgnore
-    List<Visit> restaurantVisits;
+    @OneToMany(mappedBy="restaurant")
+    private List <Visit> restaurantVisits;
 
     public Restaurant( String name, String type, long avCost, String address, String phone,String imageUrl) {
         this.name = name;
@@ -37,10 +37,10 @@ public class Restaurant {
         this.address = address;
         this.phone = phone;
         this.imageUrl=imageUrl;
+        this.restaurantVisits = new ArrayList<>();
     }
 
-    public Restaurant() {
-    }
+
 };
 
 

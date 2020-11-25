@@ -4,12 +4,14 @@ import cme.hadi.rola.exception.ResourceNotFoundException;
 import cme.hadi.rola.model.Restaurant;
 import cme.hadi.rola.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
 import javax.validation.Valid;
-import java.util.Collection;
 import java.util.List;
 
 
@@ -41,18 +43,17 @@ public class RestaurantControler {
         return restaurantRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Restaurant not found for id " + id));
     }
 
-    @CrossOrigin
+    /*@CrossOrigin
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/restaurants/name/{name}")
-    public Collection<Restaurant> getByName(@PathVariable String name) {
-        return restaurantRepository.findByName(name);
+    public Restaurant getByName(@PathVariable String nameofResto) {
+        return restaurantRepository.findByName(nameofResto).orElseThrow(() -> new ResourceNotFoundException("Restaurant not found for name " ));
     }
 
     @CrossOrigin
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/restaurants/type/{type}")
-    public Collection<Restaurant> getByType(@PathVariable String type) {
-        return restaurantRepository.findByType(type);
-    }
+    public Restaurant getByType(@PathVariable String typeofResto) {
+        return restaurantRepository.findByType(typeofResto).orElseThrow(() -> new ResourceNotFoundException("Restaurant not found for type "));} */
     }
 
