@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container } from '@material-ui/core';
 import Nav from './Components/Nav';
 import SearchBar from './Components/SearchBar';
@@ -6,6 +6,8 @@ import Grid from '@material-ui/core/Grid';
 import RestoInfo from './Components/RestoInfo';
 import { makeStyles } from '@material-ui/core/styles';
 import Resto from './Components/Resto';
+import { useDispatch, useSelector } from "react-redux";
+import { loadResto } from './Actions/action'
 
 const useStyles = makeStyles({
     root: {
@@ -21,8 +23,14 @@ const useStyles = makeStyles({
 });
 
 function App() {
+    console.log("hi app")
+
+    const dispatch = useDispatch();
+    dispatch(loadResto());
+
+
+
     const classes = useStyles();
-    console.log("hi")
     return ( <
         Grid container spacing = { 6 } >
         <
@@ -30,18 +38,18 @@ function App() {
         <
         Nav / >
         <
-        /Grid>   <
+        /Grid>    <
         Grid container item xs = { 12 } >
         <
         SearchBar / >
         <
-        /Grid> <
+        /Grid>  <
         Container className = { classes.RestoContainer } >
         <
         Resto / >
         <
-        /Container> <
-        /Grid>
+        /Container>  <
+        /Grid >
     );
 }
 
