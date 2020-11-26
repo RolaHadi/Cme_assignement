@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.validation.Valid;
-import java.util.Collection;
 import java.util.List;
 
 
@@ -18,40 +17,35 @@ import java.util.List;
 public class RestaurantControler {
     @Autowired
     private RestaurantRepository restaurantRepository;
-
-    @CrossOrigin
+    @CrossOrigin("http//localhost:3000")
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/restaurants")
     public void createRestaurant(@Valid @RequestBody Restaurant restaurant) {
         restaurantRepository.save(restaurant);
     }
-
-    @CrossOrigin
+    @CrossOrigin("http//localhost:3000")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/restaurants")
     public List<Restaurant> listRestaurant() {
         return restaurantRepository.findAll();
 
     }
-
-    @CrossOrigin
+    @CrossOrigin("http//localhost:3000")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/restaurants/{id}")
     public Restaurant getById(@PathVariable Long id) {
         return restaurantRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Restaurant not found for id " + id));
     }
-
-    @CrossOrigin
+    @CrossOrigin("http//localhost:3000")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/restaurants/name/{name}")
-    public Collection<Restaurant> getByName(@PathVariable String name) {
+    public List<Restaurant> getByName(@PathVariable String name) {
         return restaurantRepository.findByName(name);
     }
-
-    @CrossOrigin
+    @CrossOrigin("http//localhost:3000")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/restaurants/type/{type}")
-    public Collection<Restaurant> getByType(@PathVariable String type) {
+    public List<Restaurant> getByType(@PathVariable String type) {
         return restaurantRepository.findByType(type);
     }
     }

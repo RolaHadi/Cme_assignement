@@ -26,7 +26,7 @@ import java.util.Date;
     public void run(ApplicationArguments args) throws Exception {
         Restaurant bebabel = new Restaurant("Bebabel", "lebanese",50000,"Minet Hosn","01443546","/photos/bebabel.jpg");
         restaurantRepository.save(bebabel);
-        Restaurant roadster = new Restaurant("Roadster","american",50000,"Verdun","01756646","/photos/roadster.jpg");
+        Restaurant roadster = new Restaurant("Roadster Diner","american",50000,"Verdun","01756646","/photos/roadster.jpg");
         restaurantRepository.save(roadster);
         Restaurant macdonald = new Restaurant("Macdonald","american",35000,"Mansourieh","01943546","/photos/macdonald.jpg");
         restaurantRepository.save(macdonald);
