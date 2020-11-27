@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -7,8 +7,12 @@ import Button from '@material-ui/core/Button';
 import { ThemeProvider } from '@material-ui/styles';
 import Container from '@material-ui/core/Container';
 import Image from 'material-ui-image';
-import AddIcon from '@material-ui/icons/Add';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import IconButton from '@material-ui/core/IconButton';
+import { useDispatch, useSelector } from "react-redux";
+import { getResto } from '../API/apiCalls';
+
+
 const theme = createMuiTheme({
     palette: {
         primary: {
@@ -28,13 +32,13 @@ const theme = createMuiTheme({
 const useStyles = makeStyles({
     root: {
         minWidth: 275,
-        alignItems:"center",
-      marginRight:"auto",
-      marginLeft:"auto",
+        alignItems: "center",
+        marginRight: "auto",
+        marginLeft: "auto",
     },
 
 
-    RestoContainer:{
+    RestoContainer: {
         backgroundColor: '#bbdefb',
         display: 'block',
         width: '45vh',
@@ -50,36 +54,56 @@ const useStyles = makeStyles({
         display: 'flex',
         alignItems: 'center',
     },
-  
-   
+
+
 });
 
-const Resto = () => {
+const Resto = ({ id, name, imageUrl }) => {
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const [visited, setVisited] = useState(false);
 
-    return ( 
-        <ThemeProvider theme={theme}>
-        <div className={classes.root}>
-            <Container >
-    <Card className={classes.RestoContainer} >
+    const data = {
+        id: id,
+        name: name,
+        imageUrl: imageUrl
 
-      <CardContent>
-          <Image src="/photos/bebabel.jpg" />
-          <div className={classes.AddResto}>
-          <Button variant="contained" color="secondary">
-          Bebabel
-        </Button>
-        <IconButton color="secondary" >
-          <AddIcon />
-        </IconButton>
-        </div>
-      </CardContent>
-      <CardActions>
-      </CardActions>
-    </Card>
-    </Container>
-    </div>
-    </ThemeProvider>
+    }
+
+    dispatch(getResto(data));
+
+    return ( <
+        ThemeProvider theme = { theme } >
+        <
+        div className = { classes.root } >
+        <
+        Container >
+        <
+        Card className = { classes.RestoContainer } >
+        <
+        CardContent >
+        <
+        Image src = { imageUrl }
+        />  <
+        div className = { classes.AddResto } >
+        <
+        Button variant = "contained"
+        color = "secondary" > { name } < /Button>  <
+        IconButton color = "secondary" >
+        <
+        CheckCircleIcon / >
+        <
+        /IconButton>  <
+        /div >  <
+        /CardContent> <
+        CardActions >
+
+        <
+        /CardActions> <
+        /Card >  <
+        /Container>  <
+        /div >  <
+        /ThemeProvider>
     );
 }
 
