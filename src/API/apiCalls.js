@@ -2,6 +2,7 @@ import api from './index'
 
 export const getResto = async() => {
     try {
+        console.log("i am in api call")
         const res = await api.get('api/restaurants');
         console.log(res);
         return res.data;
