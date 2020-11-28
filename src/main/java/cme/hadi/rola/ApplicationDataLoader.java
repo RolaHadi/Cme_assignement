@@ -26,12 +26,29 @@ import java.util.Date;
     public void run(ApplicationArguments args) throws Exception {
         Restaurant bebabel = new Restaurant("Bebabel", "lebanese",50000,"Minet Hosn","01443546","/photos/bebabel.jpg");
         restaurantRepository.save(bebabel);
-        Restaurant roadster = new Restaurant("Roadster Diner","american",50000,"Verdun","01756646","/photos/roadster.jpg");
+        Restaurant roadster = new Restaurant("Roadster ","american",50000,"Verdun","01756646","/photos/roadster.jpg");
         restaurantRepository.save(roadster);
-        Restaurant macdonald = new Restaurant("Macdonald","american",35000,"Mansourieh","01943546","/photos/macdonald.jpg");
+        Restaurant macdonald = new Restaurant("Macdonald","american",25000,"Mansourieh","01943546","/photos/macdonald.jpg");
         restaurantRepository.save(macdonald);
-        Restaurant tsunami = new Restaurant("Tsunami","asian",35000,"Achrafieh","01773546","/photos/tsunamie.jpg");
+        Restaurant tsunami = new Restaurant("Tsunami","asian",75000,"Achrafieh","01773546","/photos/tsunamie.jpg");
         restaurantRepository.save(tsunami);
+        Restaurant kfc = new Restaurant("KFC","american",25000,"Hamra","01453546","/photos/kfc.jpg");
+        restaurantRepository.save(kfc);
+        Restaurant leila = new Restaurant("Leila","lebanese",45000,"Zeytouna Bay","01653546","/photos/leila.jpg");
+        restaurantRepository.save(leila);
+        Restaurant dipndip = new Restaurant("Dip n Dip","american",35000,"Verdun","01853546","/photos/dipndip.jpg");
+        restaurantRepository.save(dipndip);
+        Restaurant kababji = new Restaurant("Kababji","lebanese",35000,"Hamra","01353546","/photos/kababji.jpg");
+        restaurantRepository.save(kababji);
+        Restaurant obi = new Restaurant("Obi","asian",55000,"Badaro","01753546","/photos/obi.jpg");
+        restaurantRepository.save(obi);
+        Restaurant kampai = new Restaurant("Kampai","asian",65000,"Downtown","01953246","/photos/kampai.jpg");
+        restaurantRepository.save(kampai);
+
+
+
+
+
         Date bebabelDate = new Date(2020,11,21);
         Visit bebabelVisit= new Visit(bebabel,bebabelDate);
         visitRepository.save(bebabelVisit);
