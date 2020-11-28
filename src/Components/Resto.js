@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -9,8 +9,8 @@ import Container from '@material-ui/core/Container';
 import Image from 'material-ui-image';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import IconButton from '@material-ui/core/IconButton';
-import { useDispatch, useSelector } from "react-redux";
 import { getResto } from '../API/apiCalls';
+import { loadResto } from '../Actions/action';
 
 
 const theme = createMuiTheme({
@@ -60,22 +60,14 @@ const useStyles = makeStyles({
 
 const Resto = ({ id, name, imageUrl }) => {
     const classes = useStyles();
-    const dispatch = useDispatch();
-    const [visited, setVisited] = useState(false);
 
-    const data = {
-        id: id,
-        name: name,
-        imageUrl: imageUrl
+    return (
 
-    }
-
-    dispatch(getResto(data));
-
-    return ( <
+        <
         ThemeProvider theme = { theme } >
         <
         div className = { classes.root } >
+
         <
         Container >
         <
@@ -84,12 +76,13 @@ const Resto = ({ id, name, imageUrl }) => {
         CardContent >
         <
         Image src = { imageUrl }
-        />  <
+        /> <
         div className = { classes.AddResto } >
         <
         Button variant = "contained"
         color = "secondary" > { name } < /Button>  <
         IconButton color = "secondary" >
+
         <
         CheckCircleIcon / >
         <

@@ -7,7 +7,7 @@ const initialState = {
     error: false
 }
 
-export function restoReducer(state = initialState, action) {
+const restoReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_RESTO:
             return {...state, Restos: action.payload }

@@ -1,10 +1,10 @@
   import React, { useEffect, useState } from 'react';
   import Resto from './Resto';
-  import { makeStyles } from "@material-ui/core/styles";
-  import { Link } from "react-router-dom";
   import { loadResto } from '../Actions/action';
-  import { Container } from '@material-ui/core';
-
+  import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
+  import { ThemeProvider } from '@material-ui/styles';
+  import { Box } from "@material-ui/core";
+  import { useDispatch, useSelector } from "react-redux";
 
   const theme = createMuiTheme({
       palette: {
@@ -22,31 +22,14 @@
           },
       },
   });
+
   const useStyles = makeStyles({
       root: {
           minWidth: 275,
           alignItems: "center",
           marginRight: "auto",
           marginLeft: "auto",
-      },
-
-
-      RestoContainer: {
-          backgroundColor: '#bbdefb',
-          display: 'block',
-          width: '45vh',
-          transitionDuration: '0.3s',
-          height: '53vh'
-      },
-
-      AddResto: {
-          justifyContent: "space-between",
-          transform: 'scale(0.8)',
-          padding: theme.spacing(0, 2),
-          position: 'absolute',
-          display: 'flex',
-          alignItems: 'center',
-      },
+      }
 
 
   });
@@ -58,19 +41,19 @@
       const classes = useStyles();
       const dispatch = useDispatch();
       useEffect(() => {
-          getRestos();
+          dispatch(loadResto());
       }, [])
 
-      const getRestos = () => {
-          dispatch(loadResto())
-      }
+
 
       return ( <
           ThemeProvider theme = { theme } >
           <
-          div className = { classes.root } > {
+          Box spacing = { 5 }
+          className = { classes.root } > {
               Restos.map(resto => ( <
-                  Container className = { classes.RestoContainer }
+                  Box p = { 1 }
+                  m = { 1 }
                   key = { resto.id } >
                   <
                   Resto key = { resto.id }
@@ -78,20 +61,14 @@
                   name = { resto.name }
                   imageUrl = { resto.imageUrl }
                   />  <
-                  /Container>
+                  /Box >
               ))
-          }
-
-
-          <
-          /div> <
-          /ThemeProvider>
-
-
-
-
+          } <
+          /Box> <
+          /ThemeProvider >
 
       )
 
-
   }
+
+  export default ListResto;

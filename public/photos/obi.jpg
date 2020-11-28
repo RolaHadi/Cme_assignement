@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Obi</title>
+    <link rel="icon" type="image/png" href="icons/favicon.png" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="pageStyle.css">
+    <!--[if gte IE 6]>
+	    <link rel="stylesheet" type="text/css" href="pageStyleIE.css">
+	    <script type="text/javascript" src="javascript/EventHelpers.js"></script>  
+			<script type="text/javascript" src="javascript/cssQuery-p.js"></script>  
+			<script type="text/javascript" src="javascript/jcoglan.com/sylvester.js"></script>  
+			<script type="text/javascript" src="javascript/cssSandpaper.js"></script>  
+    <![endif]-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="javascript/turn.min.js"></script>
+    <!-- css3-mediaqueries.js for IE less than 9 -->
+		<!-- [if lt IE 9]>
+		  <script src="javascript/css3-mediaqueries.js"></script>
+		  <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+		<![endif]-->
+    <script type="text/javascript">
+
+    
+		$(window).ready(function() {
+
+
+      window.scrollTo(0, 
+            document.body.scrollTop );
+		      
+			Image0= new Image(150,20);
+			Image0.src = "images/obi_logo.png";
+      
+			Image10= new Image(150,20);
+			Image10.src = "backgrounds/obi_background.jpg";
+      
+			Image1= new Image(150,20);
+			Image1.src = "images/facebookover.png";
+
+			Image2 = new Image(10,30);
+			Image2.src = "images/twitterover.png";
+/*
+			Image3 = new Image(72,125);
+			Image3.src = "images/menuQBover.png";
+      
+			Image4 = new Image(72,125);
+			Image4.src = "images/drinkQBover.png";
+      
+			Image5 = new Image(72,125);
+			Image5.src = "images/deliveryQBover.png";
+*/
+			Image6 = new Image(72,125);
+			Image6.src = "images/photosbuttonover.png";
+      
+			Image7 = new Image(72,125);
+			Image7.src = "images/dishesbuttonover.png";
+      
+			Image8 = new Image(30,30);
+			Image8.src = "images/instagramover.png";
+      
+			Image9 = new Image(40,40);
+			Image9.src = "images/close_icon.png";
+      
+			Image10 = new Image(40,63);
+			Image10.src = "images/arrow_left.png";
+      
+			Image11 = new Image(40,63);
+			Image11.src = "images/arrow_right.png";
+      
+			Image12 = new Image(1181,886);
+			Image12.src = "gallery/dish/dish_gallery (1).jpg";
+      
+			Image13 = new Image(1220,820);
+			Image13.src = "gallery/photo/photo_gallery (1).jpg";
+      
+			Image14 = new Image(1220,820);
+			Image14.src = "images/sushibuttonover.png";
+     
+      Image15 = new Image(1220,820);
+      Image15.src = "gallery/sushi/sushi_gallery (1).jpg";
+      
+			window.initInput('Name', 'nameInp');
+			window.initInput('Email', 'emailInp');
+			window.initInput('Comment', 'commentInp');
+
+		if(window.addEventListener)
+		{
+      	window.addEventListener('load', function () {
+          var load_screen = document.getElementById('load_screen');
+          //document.body.removeChild(load_screen_back);
+          //document.getElementById("tempCache").appendChild(load_screen_back); end for coming soon
+      });
+		}
+		else
+		{
+			 window.attachEvent('onload', function () {
+          var load_screen = document.getElementById('load_screen');
+          //document.body.removeChild(load_screen_back);
+          //document.getElementById("tempCache").appendChild(load_screen_back); end for coming soon
+     		 });
+		}
+			if (document.getElementById('aboutBtn').addEventListener)
+			{
+				document.getElementById('aboutBtn').addEventListener('click', function () 
+				{
+				   scrollTo(820, 2250);   
+				});
+			}
+			else
+			{
+				document.getElementById('aboutBtn').attachEvent('onclick', function () 
+				{
+				  	 scrollTo(820, 2250);   
+				});
+			}
+			if (document.getElementById('menuBtn').addEventListener)
+			{
+				document.getElementById('menuBtn').addEventListener('click', function () 
+				{
+				   scrollTo(1737, 2250);   
+				});
+			}
+			else
+			{
+				document.getElementById('menuBtn').attachEvent('onclick', function () 
+				{
+				   scrollTo(1737, 2250);   
+				});	
+			}
+			if (document.getElementById('galleryBtn').addEventListener)
+			{
+				document.getElementById('galleryBtn').addEventListener('click', function () 
+				{
+				   scrollTo(2697, 2250);   
+				});
+			}
+			else
+			{
+				document.getElementById('galleryBtn').attachEvent('onclick', function () 
+				{
+				   scrollTo(2697, 2250);   
+				});
+			}
+			if (document.getElementById('contactBtn').addEventListener)
+			{
+				document.getElementById('contactBtn').addEventListener('click', function () 
+				{
+				   scrollTo(3421, 2250);   
+				});
+			}
+			else
+			{
+				document.getElementById('contactBtn').attachEvent('onclick', function () 
+				{
+				   scrollTo(3421, 2250);   
+				});
+			}
+		/*	document.getElementById('foodBtn').addEventListener('click', function () {
+				   scrollTo(document.body.scrollTop + document.documentElement.scrollTop, 2290, 2250);   
+				});
+			document.getElementById('drinkBtn').addEventListener('click', function () {
+				   scrollTo(document.body.scrollTop + document.documentElement.scrollTop, 3380, 2250);   
+				}); */
+
+		 	function scrollTo(to, duration) {
+				    var start = document.body.scrollTop + document.documentElement.scrollTop
+                change = to - start,
+				        currentTime = 0,
+				        increment = 20;
+				        
+				    var animateScroll = function(){        
+				        currentTime += increment;
+				        var val = Math.easeInOutQuad(currentTime, start, change, duration);
+				        document.documentElement.scrollTop = val;
+				        document.body.scrollTop = val;
+				        if(currentTime < duration) {
+				            setTimeout(animateScroll, increment);
+				        }
+				    };
+				    animateScroll();
+				}
+
+				function scrollTo(e,d){if(d>=0){var h=document.documentElement;if(h.scrollTop===0){var t=h.scrollTop;++h.scrollTop;h=t+1===h.scrollTop--?h:document.body}typeof e==="object"&&(e=e.offsetTop);scrollToX(h,h.scrollTop,e,0,1/d,20)}}function scrollToX(e,a,b,t,v,s){function F(){t<0||t>1||v<=0||(k=t-1,e.scrollTop=a-(a-b)*(k*k*k+1),t+=v*s,setTimeout(F,s))}F()}
+				//t = current time
+				//b = start value
+				//c = change in value
+				//d = duration
+				Math.easeInOutQuad = function (t, b, c, d) {
+					t /= d/2;
+					if (t < 1) return c/2*t*t + b;
+					t--;
+					return -c/2 * (t*(t-2) - 1) + b;
+				};
+			$('#magazine').turn({
+								display: 'double',
+								elevation:50,
+								acceleration: true,
+                page: 1,
+                width: 1096,
+                height: 600,
+                disable: false,
+                autoCenter: true,
+								when: {
+									turned: function(e, page) {
+									}
+								}
+							});
+		});
+
+    
+
+
+    
+    </script>
+    
+    <script type="text/javascript">
+
+    window.initInput = function(inputText, inputId)
+    {
+       crtInp = document.getElementById(inputId);
+       if (crtInp.value == "")
+       {
+	       crtInp.value = inputText;
+	       crtInp.style.color = "gray";
+       }
+    }
+
+    window.useInput = function(inputId)
+    {
+    	 crtInp = document.getElementById(inputId);
+    	 if (crtInp.value == "" || crtInp.value == "Name" || crtInp.value == "Email" || crtInp.value == "Comment")
+       {
+		       crtInp.value = "";
+		       crtInp.style.color = "#972483";
+       }
+    }
+
+    window.submitForm = function()
+    {
+        var allFieldsSubmitted = true;
+        var emailIsValid = true;
+        var response = document.getElementById('responseDiv');
+        var x = document.getElementById('emailInp').value;
+        window.status = 
+        	false ;
+        if (x != "" && x != 'Email')
+        {
+        	  var atpos = x.indexOf("@");
+            var dotpos = x.lastIndexOf(".");
+            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) 
+            {
+            	 emailIsValid = false;
+                
+            }    
+        }
+        else 
+        {
+            allFieldsSubmitted = false;
+        }
+        if (document.getElementById('commentInp').value == "" || document.getElementById('commentInp').value == "Comment")
+        {
+            allFieldsSubmitted = false;
+        }
+        if (document.getElementById('nameInp').value == "" || document.getElementById('nameInp').value == "Name")
+        {
+            allFieldsSubmitted = false;
+        }
+        
+        if (allFieldsSubmitted && emailIsValid)
+        {
+            document.getElementById('posInp').value = document.body.scrollTop;
+            if (window.status == "false")
+            {
+                response.innerHTML = "Sending message...";document.getElementById('messageForm').submit();            }
+            else
+            {
+            	 response.innerHTML = "You have already sent a message!";
+            }
+        }
+        else if (!allFieldsSubmitted)
+        {
+        	  response.innerHTML ="All fields are mandatory!";
+        }
+        else if (!emailIsValid)
+        {
+        	  response.innerHTML ="Not a valid e-mail address";
+        }
+    }
+
+    function createGalleryView(type)
+    {
+    	window.currentPic = 0;
+    	window.w = window.innerWidth
+    	|| document.documentElement.clientWidth
+    	|| document.body.clientWidth;
+      //
+    	window.h = window.innerHeight
+    	|| document.documentElement.clientHeight
+    	|| document.body.clientHeight;
+      //
+      var outerDiv = document.createElement('div');
+      outerDiv.style.height = window.h + "px";
+      outerDiv.style.zIndex = "16";
+      outerDiv.className = "galleryOuter";
+      outerDiv.id = "galleryOuter";
+      //
+      var picDiv = document.createElement('div');
+      picDiv.className = "galleryDiv";
+      
+      var picImg = document.createElement('img');
+      picImg.className = "galleryImg";
+      
+      //picDiv.style.height = 533 + "px";
+      //picDiv.style.width = w - 500 + "px";
+      //picDiv.style.marginLeft = -((w - 500 + 40) / 2) + "px";
+      //picDiv.style.marginTop = -((533 + 40) / 2) + "px";
+      picDiv.id = "galleryDiv";
+      picImg.id = "galleryImg";
+      //
+      var closeIcon = document.createElement('div');
+      closeIcon.className = "closeIcon";
+      if (closeIcon.addEventListener)
+      {
+	      closeIcon.addEventListener('click', function () 
+	      {
+	         if (!window.canGoNext)
+	         {
+	        	 window.pictureLoading(true);
+	        	 galleryImg.src = "";
+	         }
+		     	window.currentPic = 0;
+		     	document.getElementById('galleryOuter').style.display = "none";
+	        	document.body.removeChild(outerDiv);
+	      });
+      }
+      else
+      {
+	      closeIcon.attachEvent('onclick', function () 
+	      {
+	         if (!window.canGoNext)
+	         {
+	        	 window.pictureLoading(true);
+	        	 galleryImg.src = "";
+	         }
+		     	window.currentPic = 0;
+		     	document.getElementById('galleryOuter').style.display = "none";
+	        	document.body.removeChild(outerDiv);
+	      });
+      }
+      //
+      var prevIcon = document.createElement('div');
+      prevIcon.className = "prevIcon";
+      prevIcon.id = "prevIcon";
+      if (prevIcon.addEventListener)
+      {
+	      prevIcon.addEventListener('click', function () 
+	      {
+	          movePic(type, false);
+	      });
+      }
+      else
+      {
+	      prevIcon.attachEvent('onclick', function () 
+	      {
+	          movePic(type, false);
+	      });
+      }
+      prevIcon.style.display = "none";      
+      //
+      var nextIcon = document.createElement('div');
+      nextIcon.className = "nextIcon";
+      nextIcon.id = "nextIcon";
+      if (nextIcon.addEventListener)
+      {
+	      nextIcon.addEventListener('click', function () 
+	      {
+	          movePic(type, true);
+	      });
+      }
+      else
+      {
+	      nextIcon.attachEvent('onclick', function () 
+	      {
+	          movePic(type, true);
+	      });
+      }
+      //
+      outerDiv.appendChild(picDiv);
+      picDiv.appendChild(picImg);
+      picDiv.appendChild(prevIcon); 
+      picDiv.appendChild(nextIcon); 
+      picDiv.appendChild(closeIcon); 
+      document.body.appendChild(outerDiv);
+    }
+
+    function movePic(type, next)
+    {
+        var container = document.getElementById('galleryDiv');
+        var arrowLeft = document.getElementById('prevIcon');
+        var arrowRight = document.getElementById('nextIcon');
+        var nbPicsPhoto = 
+        14;
+        var nbPicsDish = 
+        16;
+        var nbPicsSushi = 
+        35;
+        if (window.canGoToNext)
+        {
+	        next ? window.currentPic++ : window.currentPic--;
+	        if (window.currentPic <= 1)
+	        {
+	            arrowLeft.style.display = "none";
+	        }
+	        else
+	        {
+	            arrowLeft.style.display = "block";
+	        }
+	
+	        if (type == "photo")
+	        {
+			        if (window.currentPic == nbPicsPhoto)
+			        {
+			            arrowRight.style.display = "none";
+			        }
+			        else
+			        {
+			            arrowRight.style.display = "block";
+			        }
+	        }
+	        else if (type == "dish")
+	        {
+			        if (window.currentPic == nbPicsDish)
+			        {
+			            arrowRight.style.display = "none";
+			        }
+			        else
+			        {
+			            arrowRight.style.display = "block";
+			        }
+	        }
+	        else
+	        {
+	        	if (window.currentPic == nbPicsSushi)
+		        {
+		            arrowRight.style.display = "none";
+		        }
+		        else
+		        {
+		            arrowRight.style.display = "block";
+		        }
+	        }
+	        //
+        	  window.pictureLoading(false);
+	        if (((next && window.currentPic > 0) || (!next && window.currentPic > 1)) && ((type == "photo" && window.currentPic < nbPicsPhoto) || (type == "dish" && window.currentPic < nbPicsDish) || (type == "sushi" && window.currentPic < nbPicsSushi)))
+	        {
+	            var nextImg = new Image();
+	            nextImg.src = "gallery/" + type + "/" + type + "_gallery (" + (next ? window.currentPic + 1 : window.currentPic - 1) + ").jpg";
+	        }
+	        if (((next && window.currentPic > 1) || (!next && window.currentPic > 2)) && ((type == "photo" && window.currentPic < (nbPicsPhoto - 1)) || (type == "dish" && window.currentPic < (nbPicsDish - 1)) || (type == "sushi" && window.currentPic < (nbPicsSushi - 1))))
+	        {
+	            var nextSImg = new Image();
+	            nextSImg.src = "gallery/" + type + "/" + type + "_gallery (" + (next ? window.currentPic + 2 : window.currentPic - 2) + ").jpg";
+	        }
+	        var currentImg = document.getElementById('galleryImg');
+	        currentImg.style.height = 'auto';
+	        currentImg.style.width = 'auto';
+	        currentImg.src = "gallery/" + type + "/" + type + "_gallery (" + window.currentPic + ").jpg";
+	        if (currentImg.addEventListener)
+	        {
+		        currentImg.addEventListener('load', function () 
+		        {
+		        		window.pictureLoading(true);
+		        });
+	        }
+	        else
+	        {
+		        currentImg.attachEvent('onload', function () 
+		        {
+		        		window.pictureLoading(true);
+		        });
+	        }
+	        var currentWidth;
+	        var currentHeight;
+	        if (currentImg.width > currentImg.height)
+	        {
+	        	  currentWidth = window.w - 500;
+	        	  currentHeight = currentWidth * 615 / 922;
+	        }
+	        else if (currentImg.width < currentImg.height)
+	        {
+	        	  currentWidth = window.w - 900;
+	        	  currentHeight = currentWidth * 922 / 615;
+	        }
+	        else
+	        {
+	        	currentWidth = window.w - 800;
+	        	currentHeight = currentWidth;
+	        }
+	        currentImg.style.width = currentWidth + "px";
+	        currentImg.style.height = currentHeight + "px";;
+	        container.style.width = currentWidth + "px";
+	        container.style.height = currentHeight - 2 + "px";
+	        currentImg.width = currentWidth;
+	        currentImg.height = currentHeight;
+	        //container.style.background = "url('gallery/" + type + "/" + type + "_gallery (" + window.currentPic + ").jpg')";
+	        //container.style.background += " no-repeat center center fixed";
+	        container.style.marginLeft = -(currentWidth / 2) - 20 + "px";
+	        container.style.marginTop = -(currentHeight / 2) - 20 + "px";
+        }
+        else
+        {
+            
+        }
+    }
+
+    window.displayGallery = function(type)
+    {
+    	 createGalleryView(type);
+    	 window.canGoToNext = true;
+    	 movePic(type, true);
+    }
+
+    window.pictureLoading = function (state)
+    {
+      var arrowLeft = document.getElementById('prevIcon');
+      var arrowRight = document.getElementById('nextIcon');
+      if (!state)
+      {
+    	  	window.canGoToNext = false;
+	      galleryDiv.appendChild(load_screen);
+	      galleryImg.className = "galleryImgLoading";
+	      spinner.className = "load_logo";
+	      window.arrowRightOldDisplay = arrowRight.style.display;
+	      window.arrowLeftOldDisplay = arrowLeft.style.display;
+	      arrowRight.style.display = "none";
+	      arrowLeft.style.display = "none";
+      }
+      else
+      {
+    	  	window.canGoToNext = true;
+  			document.getElementById("tempCache").appendChild(load_screen);
+	      galleryImg.className = "galleryImg";
+	      arrowRight.style.display = window.arrowRightOldDisplay;
+	      arrowLeft.style.display = window.arrowLeftOldDisplay;
+      }
+
+    }
+
+    </script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+  </head>
+  <body >
+  	<div id="skrollr-body" class="bodyDiv">
+    <script src="skrollr.min.js"></script>
+    <script>
+        // Start Skrollr
+        window.onload = function() {
+            skrollr.init({
+                forceHeight: false
+            });
+        };
+    </script>
+    
+    <div id="tempCache" style="display: none;">&nbsp;</div>
+    
+    <div id="load_screen_back">
+	    <div id="loading">
+	      <div id="load_screen">
+	         <img id="spinner" src="images/obi_logo.png" width="200px"/>
+	      </div>
+	      <div class="coming_soon"><h3>Coming Soon</h3></div>
+	    </div>
+    </div>
+    
+      
+    <div class="homeDiv" style="display: block;">
+      <table width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+          <td valign="top" align="right" width="35%" style="padding-top: 135px;">
+    	      <img width="320px" src="images/quote_1.png"/>
+          </td>
+          <td valign="top" align="right" >
+  	        <img width="765px" src="images/home_pic.png">
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+    <img class="sectionSeperator" src="images/seperator_decoration.png" style="top: 715px;" />
+        
+    <div style="font-size: 16px; font-family: karla; text-align: center; margin: 105px 0px 7px 0px">
+      <img src="images/arrow_down.gif"/>
+    </div>
+    <div>
+      <div class="inlineDiv quoteTwo" style="position:absolute; width: 327px; height: 52px; background-position: 0px 327px 52px 0px"
+        data-start="display: none;"
+        data-530-start="
+        display: inline-block;
+        left: 15px;
+        top: 1050px;
+        opacity: 0.48697;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=48.697);
+        "  
+        data-600-start="
+          left: 40px;
+          opacity: 0.920471;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=92.0471);
+        "
+        data-822-start="
+          left: 55px;
+	        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+          opacity: 1;
+        "
+      >
+        &nbsp;
+      </div>
+      <div class="inlineDiv quoteTwo" style="position: absolute; width: 286px; height: 55px; background-position: 0px -73px"
+        data-start="display: none;"
+        data-530-start="
+        display: inline-block;
+        left: 1px;
+        top: 1120px;
+        opacity: 0.417025;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=41.7025);
+        " 
+        data-822-start="
+          left: 55px;
+          opacity: 1;
+	        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+        " 
+      >
+        &nbsp;
+      </div>
+      <div class="inlineDiv quoteTwo" style="position: absolute; width: 197px; height: 55px; background-position: 0px -140px"
+        data-start="display: none;"
+        data-595-start="
+          display: inline-block;
+          left: 1px;
+          opacity: 0.417025;
+	        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=41.7025);
+          top: 1185px;
+        "
+        data-825-start="
+          left: 55px;
+          opacity: 1;
+	        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+        "
+      >
+        &nbsp;
+      </div>
+      <div class="aboutTexts" id="aboutTexts"
+           style="display: inline-block;
+                  position: absolute;
+                  top: 1051px;
+                  width: 750px; 
+                  padding: 5px 20px;
+                  height: 580px;
+      ">
+        <div style="display: inline-block;
+	                  position: relative;
+	                  width: 365px;
+                    padding-bottom: 10px;
+                    border-bottom: 3px solid black;
+        ">
+	          <p class="siteText mediumBlue justify" style="font-weight: bold; font-size: 16px">OBI Urban Sushi is the hip and trendy spot to meet up and enjoy sushi with friends and coworkers. </p>
+	        <p class="siteText mediumBlue justify">
+	          The term OBI in Japanese refers to the sash that graces a kimono, adding personality and unique character to every man and woman that wears this defining accessory. In an imaginative way, this vibrant array of sashes has been reborn in OBI's cuisine, unveiling a mouthwatering variety of recipes from the sandy shores of Okinawa to the snow-capped mountains of northern Hokkaido. Select imported ingredients are carefully combined together to create subtle dishes that tantalize the senses, playing on texture, color, and flavor in innovative ways. This is where guests can revel in the freshest and most authentic Japanese flavors, reproduced by OBI's team of specialized Asian chefs.
+	        </p>
+        </div>
+         <div style="display: block;
+                    position: relative;
+                    padding-top: 20px;
+                    width: 365px; 
+        ">
+	        <div style="display: block;
+	                    padding: 5px 20px;
+	                    background-color: #EE2B76;
+	                    opacity: 0.95;
+	                    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=95);
+	                    border-radius: 30px;
+	        ">
+		        <p class="siteText smallGray justify" style="font-size: 15.5px; color: white;">
+		          Whether it's for a quick bite before heading out to the movies or a lengthy get together, OBI is the place to enjoy authentic Japanese cuisine in a completely modern and fresh ambiance. Our different interior design and concept is an urban hangout offering signature Sushi, Sashimi, and Maki, as well as delicious Asian salads, soups, appetizers, and main dishes.
+		        </p>
+	        </div>
+        </div>
+        <div style="display: inline-block;
+                    position: absolute;
+                    top: 20px;
+                    right: 15px;
+                    width: 365px;
+                    border-left: 3px solid black;
+        ">
+	        <div style="display: block;
+		                  padding: 5px 20px;
+                      margin: 0px 20px;
+		                  background-color: #B7C340;
+		                  opacity: 0.95;
+		                  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=95);
+		                  border-radius: 30px;
+	        ">
+            <p class="siteText smallGray justify" >
+		          Forget the posh and Zen concept of Sushi and experience a whole different wave of urban Japanese cuisine representing a trendy twist on the traditional Japanese culture from the country's art to its gastronomy. Entice your senses with ingredients imported all the way from Japan and prepared by professionals, more like artists, in an edgy and modern atmosphere.
+		        </p>
+		        <p class="siteText smallGray justify">
+		          After having perfected Asian cuisine, OBI offers Beirut a unique face to introduce its hip dining concept into the Lebanese market. We are trading in refined and posh dining for a laid-back ambiance perfect for a t&ecirc;te-&agrave;-t&ecirc;te, friendly reunion, business meeting, or even a group project. When you walk into OBI you notice the edgy vibes still with small Japanese nuances here and there. OBI is a completely new environment for a completely new face of Sushi.
+		        </p>
+		        <p class="siteText smallGray justify">
+		          Our recipes still promise to leave your mind buzzing into a gourmet gastronomic whirlwind, while on the physical plane you will feel bask in your effortless, hassle-free surroundings.
+		        </p>
+          </div>
+        </div>
+      </div>
+      <div id="ieStickBox" class="inlineDiv ieStickBox stickBox" 
+        style="
+          -ms-transform: rotate(45deg);
+          -sand-transform: rotate(45deg);
+	        -webkit-transform: rotate(45deg); 
+	        transform: rotate(45deg);
+          position: absolute; 
+          width: 120px; 
+          height: 1066px; 
+          top: 1074px;
+          left: -25px;
+          background: url('images/stickbox.png'); 
+          background-repeat: no-repeat;"
+	        data-830-start="top: 1074px; left: -25px;"
+	        data-1300-start="top: 1674px; left: -625px;"
+          >
+        &nbsp;
+      </div>
+      <div class="inlineDiv stickCont" style="overflow: hidden; text-align: left; vertical-align: bottom; height: 700px; width: 700px; position: absolute;
+       top: 575px; left: 339px; transform: rotate(-7deg); -ms-transform: rotate(-7deg); -sand-transform: rotate(-7deg);
+        -webkit-transform: rotate(-7deg); "
+        data-830-start="top: 575px; left: 339px;"
+        data-1300-start="top: 1175px; left: -261px;"
+      >
+        <div class="ieStick" style="
+        position: absolute;
+        -ms-transform: rotate(-38deg);
+        -webkit-transform: rotate(-38deg); 
+        transform: rotate(-38deg);
+        -sand-transform: rotate(-38deg);
+        left: -801px; bottom: -236px;
+        width: 941px; height: 57px; background: url('images/sticks.png'); background-repeat: no-repeat;"
+        data-830-start="left: -802px; bottom: -235px;"
+        data-1300-start="left: -130px; bottom: 289px;"
+        >
+          &nbsp;
+        </div>
+      </div>
+    </div>
+    <img class="sectionSeperator" src="images/seperator_decoration.png" style="top: 1684px;" />
+    <div style="position: absolute; top: 1946px;">
+      &nbsp;
+	    <img src="images/quote_3_1.png" width="210px" style="position: absolute"
+        data-start="display: none;"
+        data-1526-start="
+          display: inline-block;
+          left: 90px;
+          top: 260px;
+          opacity: 0.257683;
+          filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+        "
+        data-1686-start="
+          left: 120px;
+          top: 260px;
+          opacity: 0.967246;
+          filter: progid:DXImageTransform.Microsoft.Alpha(opacity=96.7246);
+        "
+      />
+	    <img src="images/quote_3_2.png" width="182px" style="position: absolute"
+        data-start="display: none;"
+        data-1558-start="
+          display: inline-block;
+          left: 90px;
+          top: 297px;
+          opacity: 0.257683;
+          filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+        "
+        data-1708-start="
+          left: 120px;
+          top: 297px;
+          opacity: 0.967246;
+          filter: progid:DXImageTransform.Microsoft.Alpha(opacity=96.7246);
+        "
+      />
+	    <img src="images/quote_3_3.png" width="84px" style="position: absolute"
+        data-start="display: none;"
+        data-1596-start="
+          display: inline-block;
+          left: 90px;
+          top: 338px;
+          opacity: 0.257683;
+          filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+        "
+        data-1736-start="
+          left: 120px;
+          top: 338px;
+          opacity: 1;
+          filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+        "
+      />
+    </div>
+    <div style="text-align: center; margin: 887px 0px 7px 25px">
+      <img src="images/arrow_down.gif"/>
+    </div>
+    <div style="width: 241px; height: 39px; 
+     background-image: url('images/foodtitle.png'); background-repeat: no-repeat;
+     position: absolute; top: 1942px; left: 100px;"
+      data-start="display: none;"
+      data-1202-start="
+	      display: block; 
+	      left: 20px;
+	      opacity: 0.257683;
+	      filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+	    data-1442-start="
+	      display: block; 
+	      left: 100px;
+	      opacity: 1;
+	      filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+	    "
+    >
+      &nbsp;
+    </div>
+    
+    <div style="width: 440px; height: 32px; font-family: Karla; font-size: 12px; position: absolute;
+    top: 2642px;"
+    data-start="display: none;"
+    data-1925-start="
+	    display: block; 
+	    left: 104px;
+      opacity: 0.257683;
+      filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+    "
+    data-1997-start="
+	    display: block; 
+	    left: 185px;
+      opacity: 1;
+      filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+    "
+    >
+      *All prices are in Lebanese Pounds inclusive of V.A.T
+    </div>
+    <div style="vertical-align: top; position: absolute; top: 2015px; left: 942px; font-family: raleway; font-size: 20px; color: #231F20;"
+       data-start="display: none;"
+      data-1242-start=" 
+        display: block; 
+        left: 862px;
+        opacity: 0.257683;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+      data-1642-start="
+        display: block; 
+        left: 942px;
+        opacity: 1;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+      "
+    >
+      <img width="28px;" style="margin-top: -3px; margin-right: 15px;" src="images/menu_arrow_left.png" />
+      Click here
+    </div>
+    <div style="position: absolute; left: 67px; top: 2012px;"
+    data-start="display: none;"
+      data-1242-start="
+        display: block; 
+        left: 20px;
+        opacity: 0.257683;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+      data-1642-start="
+        display: block; 
+        left: 100px;
+        opacity: 1;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+      "
+    >
+        <div id="magazine" style="text-align: center;">
+          <div class="menuCover menuCover" style="background-size: cover; background-image: url('images/menu/orig/menu_0.jpg');">
+            <div class="menuPointer rightPoint topPoint">&nbsp;</div>
+            <div class="menuPointer rightPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageLeft" style="background-size: cover; background-image: url('images/menu/orig/menu_1.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageRight" style="background-size: cover; background-image: url('images/menu/orig/menu_2.jpg');">
+            <div class="menuPointer rightPoint topPoint">&nbsp;</div>
+            <div class="menuPointer rightPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageLeft" style="background-size: cover; background-image: url('images/menu/orig/menu_3.jpg');">
+            <div class="menuPointer rightPoint topPoint">&nbsp;</div>
+            <div class="menuPointer rightPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageRight" style="background-size: cover; background-image: url('images/menu/orig/menu_4.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageLeft" style="background-size: cover; background-image: url('images/menu/orig/menu_5.jpg');">
+            <div class="menuPointer rightPoint topPoint">&nbsp;</div>
+            <div class="menuPointer rightPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageRight" style="background-size: cover; background-image: url('images/menu/orig/menu_6.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageLeft" style="background-size: cover; background-image: url('images/menu/orig/menu_7.jpg');">
+            <div class="menuPointer rightPoint topPoint">&nbsp;</div>
+            <div class="menuPointer rightPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageRight" style="background-size: cover; background-image: url('images/menu/orig/menu_8.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageLeft" style="background-size: cover; background-image: url('images/menu/orig/menu_9.jpg');">
+            <div class="menuPointer rightPoint topPoint">&nbsp;</div>
+            <div class="menuPointer rightPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageRight" style="background-size: cover; background-image: url('images/menu/orig/menu_10.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageLeft" style="background-size: cover; background-image: url('images/menu/orig/menu_11.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageRight" style="background-size: cover; background-image: url('images/menu/orig/menu_12.jpg');">
+            <div class="menuPointer rightPoint topPoint">&nbsp;</div>
+            <div class="menuPointer rightPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageLeft" style="background-size: cover; background-image: url('images/menu/orig/menu_13.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageRight" style="background-size: cover; background-image: url('images/menu/orig/menu_14.jpg');">
+            <div class="menuPointer rightPoint topPoint">&nbsp;</div>
+            <div class="menuPointer rightPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageLeft" style="background-size: cover; background-image: url('images/menu/orig/menu_15.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageRight" style="background-size: cover; background-image: url('images/menu/orig/menu_16.jpg');">
+            <div class="menuPointer rightPoint topPoint">&nbsp;</div>
+            <div class="menuPointer rightPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageLeft" style="background-size: cover; background-image: url('images/menu/orig/menu_17.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageRight" style="background-size: cover; background-size: cover; background-image: url('images/menu/orig/menu_18.jpg');">
+            <div class="menuPointer rightPoint topPoint">&nbsp;</div>
+            <div class="menuPointer rightPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageLeft" style="background-size: cover; background-image: url('images/menu/orig/menu_19.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageRight" style="background-size: cover; background-image: url('images/menu/orig/menu_20.jpg');">
+            <div class="menuPointer rightPoint topPoint">&nbsp;</div>
+            <div class="menuPointer rightPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageLeft" style="background-size: cover; background-image: url('images/menu/orig/menu_21.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageRight" style="background-size: cover; background-image: url('images/menu/orig/menu_22.jpg');">
+            <div class="menuPointer rightPoint topPoint">&nbsp;</div>
+            <div class="menuPointer rightPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageLeft" style="background-size: cover; background-image: url('images/menu/orig/menu_23.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageRight" style="background-size: cover; background-image: url('images/menu/orig/menu_24.jpg');">
+            <div class="menuPointer rightPoint topPoint">&nbsp;</div>
+            <div class="menuPointer rightPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuBack pageLeft" style="background-size: cover; background-image: url('images/menu/orig/menu_25.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+          <div class="menuCover pageRight" style="background-size: cover; background-image: url('images/menu/orig/menu_back_cover.jpg');">
+            <div class="menuPointer leftPoint topPoint">&nbsp;</div>
+            <div class="menuPointer leftPoint bottomPoint">&nbsp;</div>
+          </div>
+        </div>
+    </div>
+    <img class="sectionSeperator" src="images/seperator_decoration.png" style="top: 2704px;" />
+    <img src="images/quote_4.png" width="500px" style="position: absolute; top: 2910px; left: 100px;" 
+      data-start="display: none;"
+      data-2355-start="
+        display: block; 
+        left: 20px;
+        top: 2880px;
+        opacity: 0.257683;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+      data-2650-start="
+        display: block; 
+        left: 100px;
+        top: 2910px;
+        opacity: 1;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+      "
+    />
+    <div style="position: absolute; font-family: karla; font-weight: bold; font-size: 14px; color: #333333; width: 589px;
+     top: 3010px; left: 115px;"
+     data-start="display: none;"
+      data-2320-start="
+        display: block; 
+        left: 15px;
+        opacity: 0.257683;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+      data-2462-start="
+        display: block; 
+        left: 115px;
+        opacity: 1;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+      "
+     >
+      View our photo Gallery of our oustanding restaurant as well as a large collection of our fresh
+       meals prepared by masters of Japanese cuisine.
+    </div>
+    <div style="position: absolute; font-family: karla; font-weight: bold; font-size: 14px; color: #972483; width: 250px;
+     top: 3055px; left: 115px;"
+      data-start="display: none;"
+      data-2480-start="
+        display: block; 
+        left: 15px;
+        opacity: 0.257683;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+      data-2600-start="
+        display: block; 
+        left: 115px;
+        opacity: 1;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+      " 
+    >
+      click on an album to enlarge*
+    </div>
+    <div class="photoGallery" onclick="window.displayGallery('photo')">
+      &nbsp;
+    </div>
+    <div class="dishGallery" onclick="window.displayGallery('dish')">
+      &nbsp;
+    </div>
+    <div class="sushiGallery" onclick="window.displayGallery('sushi')">
+      &nbsp;
+    </div>
+    <img class="sectionSeperator" src="images/seperator_decoration.png" style="top: 3385px;" />
+    <div style="color: #231F20; font-size: 55px; font-family: raleway; position: absolute;
+    top: 3613px; left: 145px; width: 250px; height: 124px;">
+      Say hello, Leave us
+    </div>
+    <div style="width: 243px; height: 45px; background: url('images/contacttitle.png'); background-repeat: no-repeat; position: absolute;
+      top: 3760px; left: 145px;">
+      &nbsp;
+    </div>
+    <img src="images/contactimage.png" style="position: absolute; top: 3830px; left: 150px;"
+    />
+    <div style="width: 157px; height: 17px; font-size: 14px; color: #231F20; font-family: karla; position:  absolute;
+    top: 3647px; left: 980px;"
+    data-start="display: none;"
+      data-3020-start="
+        display: block;
+        left: 450px;
+        opacity: 0.257683;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+      data-3280-start="
+        left: 1022px;
+        opacity: 1;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+      " 
+    >
+      all fields are mandatory
+    </div>
+    <div style="width: 112px; font-weight: bold; text-align: right; height: 48px; font-size: 30px; color: #231F20; font-family: raleway; position:  absolute;
+    top: 3670px; left: 685px;" 
+      data-start="display: none;"
+      data-3020-start="
+        display: block;
+        left: 450px;
+        opacity: 0.257683;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+      data-3280-start="
+        left: 685px;
+        opacity: 1;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+      " 
+    >
+      Address
+    </div>
+    <div style="width: 144px; height: 51px; text-align: right; font-size: 14px; color: #231F20; font-family: karla; position:  absolute;
+    top: 3727px; left: 654px;"
+      data-start="display: none;"
+      data-3020-start="
+        display: block;
+        left: 420px;
+        opacity: 0.257683;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+      data-3280-start="
+        left: 655px;
+        opacity: 1;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+      " 
+    >
+      Badaro, Main Street<br /> 76-007 599 
+    </div>
+    <div style="width: 114px; height: 51px; text-align: right; font-size: 14px; color: #231F20; font-family: karla; position:  absolute;
+    top: 3777px; left: 684px;"
+      data-start="display: none;"
+      data-3020-start="
+        display: block;
+        left: 450px;
+        opacity: 0.257683;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+      data-3280-start="
+        left: 685px;
+        opacity: 1;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+      " 
+    >
+      ABC Dbayeh L4<br /> 76-001 544<br /> 04-525586
+    </div>
+	<div style="width: 120px; height: 51px; text-align: right; font-size: 14px; color: #231F20; font-family: karla; position:  absolute;
+    top: 3838px; left: 684px;"
+      data-start="display: none;"
+      data-3020-start="
+        display: block;
+        left: 444px;
+        opacity: 0.257683;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+      data-3280-start="
+        left: 679px;
+        opacity: 1;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+      " 
+    >
+      The Village Dbayeh <br /> 71-900 190
+    </div>
+    <div style="width: 114px; height: 26px; text-align: right; font-size: 14px; text-decoration: none; color: #972483; font-family: karla; position:  absolute;
+    top: 3880px; left: 684px;"
+    data-start="display: none;"
+      data-3020-start="
+        display: block;
+        left: 450px;
+        opacity: 0.257683;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+      data-3280-start="
+        left: 685px;
+        opacity: 1;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+      " 
+    >
+      Customer Service <div style="color: #231F20;"> 78-804304 </div>
+    </div>
+    <div style="width: 114px; height: 26px; font-weight: normal; text-align: right; font-size: 14px; text-decoration: underline; color: #972483; font-family: karla; position:  absolute;
+    top: 3922px; left: 684px;"
+    data-start="display: none;"
+      data-3020-start="
+        display: block;
+        left: 450px;
+        opacity: 0.257683;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+      data-3280-start="
+        left: 685px;
+        opacity: 1;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+      " 
+    >
+      info@obilb.com
+    </div>
+    <div style="position: absolute; top: 3670px; left: 829px; width: 340px;"
+      data-start="display: none;"
+      data-3020-start="
+        display: block;
+        left: 620px;
+        opacity: 0.257683;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25.7683);
+      "
+      data-3280-start="
+        left: 829px;
+        opacity: 1;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+      " 
+    >
+      <form id="messageForm" action="index.php" method="post">
+        <input autocomplete="off" type="text" id="nameInp" name="nameInp" 
+        onfocus="window.useInput('nameInp')" 
+        onblur="window.initInput('Name', 'nameInp')"
+        style="width: 300px; height: 35px; padding: 2px 10px 2px 30px; font-size: 16px; color: #972483; font-family: karla; border: 1px solid #C8C7C7; 
+        "/>
+        <input autocomplete="off" type="text" id="emailInp" name="emailInp" 
+        onfocus="window.useInput('emailInp')" 
+        onblur="window.initInput('Email', 'emailInp')"
+        style="width: 300px; height: 35px; padding: 2px 10px 2px 30px; font-size: 16px; color: #972483; font-family: karla; border: 1px solid #C8C7C7; 
+        margin-top: 20px;"/>
+        <textarea autocomplete="off" type="text" id="commentInp" name="commentInp" 
+        onfocus="window.useInput('commentInp')" 
+        onblur="window.initInput('Comment', 'commentInp')"
+        style="width: 300px; height: 127px; padding: 2px 10px 2px 30px; font-size: 16px; color: #972483; font-family: karla; border: 1px solid #C8C7C7; 
+        margin-top: 20px;" ></textarea>
+        <div style="margin-top: 15px;" class="g-recaptcha" data-sitekey="6LeeqSUUAAAAAAxOJ9JnHZSq5Dicc5efc8_7KN6y"></div>
+        <input autocomplete="off" type="text" id="posInp" name="posInp" value="no" style="display: none;"/>
+        <input type="button" id="msgSubmit" onclick="window.submitForm()" value="submit" style="vertical-align: top; background-color: black; color: white; font-family: raleway; font-size: 14px; width: 86px; height: 26px; float: right; border: none; margin: 23px -20px 0px 0px;"
+      </form>
+    </div>
+    <div id="responseDiv" style="position: absolute; top: 4047px; left: 827px; width: 250px; font-family: karla; font-size: 16px; text-align: center; height: 27px; vertical-align: middle;">
+          </div>
+    <img src="images/bottom.png" style="margin-bottom: 15px; position: absolute; left: 50%; top: 4112px; margin-left: -133.5px" />
+      <div class="bottomText" style="text-align:left; position: absolute; top: 4245px; left: 20px;">
+        Managed by Catertainment
+      </div>
+      <div class="bottomText" style="margin-left: -83px; text-align:left; position: absolute; top: 4245px; left: 50%">
+        OBI All Rights Reserved - 2015
+      </div>
+      <div class="bottomText" style="margin-bottom: 15px; text-align:right; position: absolute; top: 4245px; right: 20px;">
+        Developed and designed by <a style="color: #982B81;" target="_blank" href="http://www.larivistapublishing.com">La Rivista Publishing</a> &copy;
+      </div>
+    </div>
+    <div class="headerDiv" style="background-image: url('backgrounds/obi_background.jpg'); background-repeat: repeat;">
+      <img src="images/header_left.png" width="30%" style="margin-bottom: 10px;"/>
+      <div class="inlineDiv headLinkSuperCont" style="position: fixed;  vertical-align: center; text-align: center">
+        <div class="inlineDiv">
+          <div class="headlinkCont">
+            <div id="aboutBtn" class="inlineDiv headLink">about us</div>
+          </div>
+        </div>
+          <div class="inlineDiv headLink separator">&nbsp;</div>
+        <div class="inlineDiv">
+          <div class="headlinkCont">
+            <div id="menuBtn" class="inlineDiv headLink">menu</div>
+          </div>
+        </div>
+          <div class="inlineDiv headLink separator">&nbsp;</div>
+        <div class="inlineDiv">
+          <div class="headlinkCont">
+            <div id="galleryBtn" class="inlineDiv headLink">photo gallery</div>
+          </div>
+        </div>
+          <div class="inlineDiv headLink separator">&nbsp;</div>
+        <div class="inlineDiv">
+          <div class="headlinkCont">
+            <div id="contactBtn" class="inlineDiv headLink">contact us</div>
+          </div>
+        </div>
+          <div class="inlineDiv headLink separator">&nbsp;</div>
+        <div class="inlineDiv socialCont" style="margin-left: 20px;">
+          <div class="inlineDiv headLink facebook" onclick="window.open('https://www.facebook.com/OBIsushi', '_blank')">&nbsp;</div>
+        </div>
+        <div class="inlineDiv socialCont">
+          <div class="inlineDiv headLink twitter" onclick="window.open('https://twitter.com/SushiOBI', '_blank')">&nbsp;</div>
+        </div>
+        <div class="inlineDiv socialCont">
+          <div class="inlineDiv headLink insta" onclick="window.open('https://instagram.com/obisushi', '_blank')">&nbsp;</div>
+        </div>
+      </div>
+      <div>
+        <img src="images/header_right.png" width="7%" style="position:fixed; top: 0; right: 0; margin-bottom: 10px;"/>
+      </div>
+    </div>
+  </body>
+</html>

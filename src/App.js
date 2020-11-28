@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Container } from '@material-ui/core';
 import Nav from './Components/Nav';
 import SearchBar from './Components/SearchBar';
@@ -6,14 +6,13 @@ import Grid from '@material-ui/core/Grid';
 import RestoInfo from './Components/RestoInfo';
 import { makeStyles } from '@material-ui/core/styles';
 import Resto from './Components/Resto';
-import { useDispatch, useSelector } from "react-redux";
 import { loadResto } from './Actions/action'
+import ListResto from './Components/ListResto';
 
 const useStyles = makeStyles({
     root: {
         minWidth: 275,
     },
-
     RestoContainer: {
         display: "flex",
         alignItems: "center",
@@ -23,12 +22,6 @@ const useStyles = makeStyles({
 });
 
 function App() {
-    console.log("hi app")
-
-    const dispatch = useDispatch();
-    dispatch(loadResto());
-
-
 
     const classes = useStyles();
     return ( <
@@ -44,11 +37,12 @@ function App() {
         SearchBar / >
         <
         /Grid>  <
-        Container className = { classes.RestoContainer } >
+        Grid container item xs = { 12 }
+        className = { classes.RestoContainer } >
         <
-        Resto / >
+        ListResto / >
         <
-        /Container>  <
+        /Grid> <
         /Grid >
     );
 }
