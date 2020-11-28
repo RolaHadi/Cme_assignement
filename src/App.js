@@ -7,7 +7,8 @@ import RestoInfo from './Components/RestoInfo';
 import { makeStyles } from '@material-ui/core/styles';
 import Resto from './Components/Resto';
 import { loadResto } from './Actions/action'
-import ListResto from './Components/ListResto';
+import RestoPage from './Components/RestoPage';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const useStyles = makeStyles({
     root: {
@@ -25,25 +26,20 @@ function App() {
 
     const classes = useStyles();
     return ( <
-        Grid container spacing = { 6 } >
+        Router >
         <
-        Grid container item xs = { 12 } >
+        div className = "App" >
         <
         Nav / >
         <
-        /Grid>    <
-        Grid container item xs = { 12 } >
+        Switch >
         <
-        SearchBar / >
-        <
-        /Grid>  <
-        Grid container item xs = { 12 }
-        className = { classes.RestoContainer } >
-        <
-        ListResto / >
-        <
-        /Grid> <
-        /Grid >
+        Route path = "/"
+        exact component = { RestoPage }
+        /> <
+        /Switch>  <
+        /div>  <
+        /Router>
     );
 }
 
