@@ -2,6 +2,9 @@ import { takeLatest, call, put } from 'redux-saga/effects'
 
 import { LOAD_RESTO, setResto } from '../Actions/action';
 import { getResto } from '../API/apiCalls'
+
+
+
 export function* LoadRestoWatcher() {
     yield takeLatest(LOAD_RESTO, LoadRestoApi)
 

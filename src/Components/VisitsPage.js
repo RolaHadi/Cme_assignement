@@ -4,8 +4,7 @@ import Nav from './Nav';
 import SearchBar from './SearchBar';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import Resto from './Resto';
-import ListResto from './ListResto';
+import Visits from './Visits';
 
 const useStyles = makeStyles({
     root: {
@@ -19,7 +18,7 @@ const useStyles = makeStyles({
     },
 });
 
-function RestoPage() {
+function VisitPage() {
 
     const classes = useStyles();
     return ( <
@@ -38,7 +37,7 @@ function RestoPage() {
         Grid container item xs = { 12 }
         className = { classes.RestoContainer } >
         <
-        ListResto / >
+        Visits / >
         <
         /Grid>  <
         /Grid >
@@ -46,4 +45,4 @@ function RestoPage() {
     );
 }
 
-export default RestoPage;
+export default VisitPage;

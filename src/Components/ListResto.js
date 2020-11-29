@@ -46,20 +46,19 @@
 
 
 
-      return ( <
+      return (
+
+          <
           ThemeProvider theme = { theme } >
           <
-          Box spacing = { 5 }
-          className = { classes.root } > {
+          Box className = { classes.root } > {
               Restos.map(resto => ( <
                   Box p = { 1 }
                   m = { 1 }
                   key = { resto.id } >
                   <
                   Resto key = { resto.id }
-                  id = { resto.id }
-                  name = { resto.name }
-                  imageUrl = { resto.imageUrl }
+                  resto = { resto }
                   />  <
                   /Box >
               ))

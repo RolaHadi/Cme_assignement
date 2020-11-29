@@ -1,13 +1,7 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
-import Nav from './Components/Nav';
-import SearchBar from './Components/SearchBar';
-import Grid from '@material-ui/core/Grid';
-import RestoInfo from './Components/RestoInfo';
 import { makeStyles } from '@material-ui/core/styles';
-import Resto from './Components/Resto';
-import { loadResto } from './Actions/action'
 import RestoPage from './Components/RestoPage';
+import VisitPage from './Components/VisitsPage';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -30,12 +24,13 @@ function App() {
         <
         div className = "App" >
         <
-        Nav / >
-        <
         Switch >
         <
         Route path = "/"
         exact component = { RestoPage }
+        /> <
+        Route path = "/visits"
+        exact component = { VisitPage }
         /> <
         /Switch>  <
         /div>  <

@@ -10,7 +10,8 @@ import Image from 'material-ui-image';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import IconButton from '@material-ui/core/IconButton';
 import { getResto } from '../API/apiCalls';
-import { loadResto } from '../Actions/action';
+import { loadResto, addVisit } from '../Actions/action';
+import { useDispatch, useSelector } from "react-redux";
 
 
 const theme = createMuiTheme({
@@ -58,8 +59,26 @@ const useStyles = makeStyles({
 
 });
 
-const Resto = ({ id, name, imageUrl }) => {
+const Resto = ({ resto }) => {
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const handle = evt => {
+        evt.preventDefault();
+        evt.stopPropagation();
+
+        var today = new Date();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+        const data = {
+            id: resto.id,
+            restaurant: resto,
+            date: date
+        }
+        console.log(data);
+        dispatch(addVisit(data));
+
+
+    }
 
     return (
 
@@ -75,13 +94,14 @@ const Resto = ({ id, name, imageUrl }) => {
         <
         CardContent >
         <
-        Image src = { imageUrl }
+        Image src = { resto.imageUrl }
         /> <
         div className = { classes.AddResto } >
         <
         Button variant = "contained"
-        color = "secondary" > { name } < /Button>  <
-        IconButton color = "secondary" >
+        color = "secondary" > { resto.name } < /Button>  <
+        IconButton color = "secondary"
+        onClick = { handle } >
 
         <
         CheckCircleIcon / >

@@ -1,4 +1,4 @@
-import { LOAD_VISITS, ADD_VISIT } from '../Actions/action'
+import { SET_VISIT, ADD_VISIT } from '../Actions/action'
 
 
 const initialState = {
@@ -8,7 +8,7 @@ const initialState = {
 
 const visitsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case LOAD_VISITS:
+        case SET_VISIT:
             return {...state, Visits: action.payload }
         case ADD_VISIT:
             return {...state, Visits: action.payload }

@@ -16,14 +16,21 @@ export const setVisit = (data) => ({
     payload: data
 });
 
+export const GET_RESTO_ID = "GET_RESTO_ID";
+export const get_resto_id = (id) => ({
+    type: SET_VISIT,
+    payload: id
+});
+
+
+
 export const LOAD_VISITS = "LOAD_VISITS";
-export const loadVisits = (data) => ({
+export const loadVisits = () => ({
     type: LOAD_VISITS,
-    payload: data
 });
 
 export const ADD_VISIT = "ADD_VISIT";
-export const addVisit = (Resto) => ({
+export const addVisit = (visit) => ({
     type: ADD_VISIT,
-    payload: Resto,
+    payload: visit,
 });

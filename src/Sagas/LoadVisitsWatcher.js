@@ -1,18 +1,22 @@
 import { takeLatest, call, put } from 'redux-saga/effects'
 
 import { LOAD_VISITS, setVisit } from '../Actions/action';
-import { getVisit } from '../API/apiCalls'
+import { getVisits } from '../API/apiCalls'
+
+
+
 export function* LoadVisitsWatcher() {
-    yield takeLatest(LOAD_VISITS, LoadVisitApi)
+    yield takeLatest(LOAD_VISITS, LoadVisitsApi)
 
 }
 
-function* LoadVRestoFlow(action) {
+function* LoadVisitsApi(action) {
     let visits = [];
     try {
-        Resto = yield call(getVisit, { action })
-        yield put(setVisit(Visit));
-        console.log(visit)
+        console.log("in saga loader visit")
+        visits = yield call(getVisits, { action })
+        yield put(setVisit(visits));
+        console.log(visits)
 
     } catch (error) {
         console.log(error);

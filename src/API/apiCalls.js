@@ -32,6 +32,17 @@ export const getRestosByType = async(restaurants) => {
     }
 }
 
+export const getVisits = async(visits) => {
+    try {
+        console.log("i am in api call")
+        const data = await api.get('api/visits');
+        console.log(data);
+        return data.data;
+    } catch (error) {
+        console.log(error);
+    }
+
+}
 
 
 
