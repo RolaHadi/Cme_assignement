@@ -12,24 +12,21 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/")
+@CrossOrigin(origins="http://localhost:3000")
 public class VisitControler {
     @Autowired
     private VisitRepository visitRepository;
-    @CrossOrigin
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/visits")
     public void createVisit(@Valid @RequestBody Visit visit) {
         visitRepository.save(visit);
     }
-
-    @CrossOrigin
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/visits")
     public List<Visit> listVisits() {
         return visitRepository.findAll();
     }
 
-    @CrossOrigin
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/visits/{id}")
     public Visit findById(@PathVariable Long id) {
