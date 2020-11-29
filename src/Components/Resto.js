@@ -62,6 +62,7 @@ const useStyles = makeStyles({
 const Resto = ({ resto }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
+
     const handle = evt => {
         evt.preventDefault();
         evt.stopPropagation();
@@ -70,14 +71,11 @@ const Resto = ({ resto }) => {
         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
         const data = {
-            id: resto.id,
             restaurant: resto,
             date: date
         }
         console.log(data);
         dispatch(addVisit(data));
-
-
     }
 
     return (
@@ -86,7 +84,6 @@ const Resto = ({ resto }) => {
         ThemeProvider theme = { theme } >
         <
         div className = { classes.root } >
-
         <
         Container >
         <

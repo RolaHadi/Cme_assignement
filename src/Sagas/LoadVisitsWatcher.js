@@ -7,14 +7,15 @@ import { getVisits } from '../API/apiCalls'
 
 export function* LoadVisitsWatcher() {
     yield takeLatest(LOAD_VISITS, LoadVisitsApi)
-
 }
 
 function* LoadVisitsApi(action) {
-    let visits = [];
+    let visits;
+    console.log("in saga loader")
+
     try {
         console.log("in saga loader visit")
-        visits = yield call(getVisits, { action })
+        visits = yield call(getVisits)
         yield put(setVisit(visits));
         console.log(visits)
 

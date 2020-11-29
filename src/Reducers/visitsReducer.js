@@ -11,6 +11,7 @@ const visitsReducer = (state = initialState, action) => {
         case SET_VISIT:
             return {...state, Visits: action.payload }
         case ADD_VISIT:
+            console.log("i am in add visit reducer")
             return {...state, Visits: action.payload }
         default:
             return state;

@@ -32,6 +32,17 @@ export const getRestosByType = async(restaurants) => {
     }
 }
 
+export const getRestosById = async(restaurant) => {
+    try {
+        const id = restaurant.action.payload.id
+        const data = await api.get(`api/restaurants/${id}`);
+        return data.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
 export const getVisits = async(visits) => {
     try {
         console.log("i am in api call")
@@ -48,7 +59,8 @@ export const getVisits = async(visits) => {
 
 export const postVisit = async(data) => {
     try {
-        const result = await api.post("/visits", data);
+        console.log("i am in api")
+        const result = await api.post("api/visits", data);
         return result.data;
     } catch (error) {
         console.log(error);

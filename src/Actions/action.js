@@ -30,7 +30,11 @@ export const loadVisits = () => ({
 });
 
 export const ADD_VISIT = "ADD_VISIT";
-export const addVisit = (visit) => ({
-    type: ADD_VISIT,
-    payload: visit,
-});
+export const addVisit = (visit) => {
+    console.log("i am in add visit");
+    const action = {
+        type: ADD_VISIT,
+        payload: visit
+    };
+    return action;
+};

@@ -6,6 +6,7 @@ import { getResto } from '../API/apiCalls'
 
 
 export function* LoadRestoWatcher() {
+    console.log("in saga watch loader")
     yield takeLatest(LOAD_RESTO, LoadRestoApi)
 
 }
