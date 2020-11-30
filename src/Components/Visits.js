@@ -56,6 +56,7 @@ const Visits = () => {
     const classes = useStyles();
     const VisitsData = useSelector(state => state.Visits.Visits);
     const dispatch = useDispatch();
+
     useEffect(() => {
         getVisits();
     }, [])
@@ -76,9 +77,13 @@ const Visits = () => {
     return ( <
         ThemeProvider theme = { theme } >
         <
+        div style = {
+            { height: 600, width: '100%' } } >
+        <
         DataGrid rows = { visitslist }
         columns = { columns }
         />  <
+        /div> <
         /ThemeProvider >
     );
 

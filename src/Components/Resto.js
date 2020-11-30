@@ -71,6 +71,7 @@ const Resto = ({ resto }) => {
         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
         const data = {
+
             restaurant: resto,
             date: date
         }

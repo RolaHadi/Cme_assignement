@@ -3,10 +3,12 @@
   import { loadResto } from '../Actions/action';
   import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
   import { ThemeProvider } from '@material-ui/styles';
-  import { Box } from "@material-ui/core";
+  import { Box, Dialog } from "@material-ui/core";
   import { useDispatch, useSelector } from "react-redux";
-
+  import { Link } from "react-router-dom";
+  import RestoInfo from "./RestoInfo";
   const theme = createMuiTheme({
+
       palette: {
           primary: {
               light: '#03a9f4',
@@ -21,6 +23,7 @@
               contrastText: '#fafafa',
           },
       },
+
   });
 
   const useStyles = makeStyles({
@@ -35,14 +38,26 @@
   });
 
 
-
   const ListResto = () => {
       const Restos = useSelector(state => state.Restaurants.Restos);
       const classes = useStyles();
+      const [displayInfo, setDisplayInfo] = useState(false)
       const dispatch = useDispatch();
       useEffect(() => {
           dispatch(loadResto());
+
       }, [])
+
+      const [openInfo, setOpenInfo] = useState(false);
+
+      const handleOpenInfo = o => {
+          setOpenInfo(o)
+      };
+
+      const handleCloseInfo = () => {
+          setOpenInfo(false);
+      };
+
 
 
 
@@ -57,10 +72,33 @@
                   m = { 1 }
                   key = { resto.id } >
                   <
+                  Link onClick = {
+                      () => handleOpenInfo(resto.id) }
+                  to = "" >
+                  <
                   Resto key = { resto.id }
                   resto = { resto }
                   />  <
+                  /Link> <
+                  Dialog fullScreen open = { openInfo === resto.id }
+                  onClose = { handleCloseInfo }
+                  key = { resto.id } >
+                  <
+                  RestoInfo key = { resto.id }
+                  name = { resto.name }
+                  type = { resto.type }
+                  avCost = { resto.avCost }
+                  address = { resto.address }
+                  phone = { resto.phone }
+                  imageUrl = { resto.imageUrl }
+                  close = { handleCloseInfo }
+                  /> <
+                  /Dialog> <
                   /Box >
+
+
+
+
               ))
           } <
           /Box> <

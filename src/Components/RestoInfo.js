@@ -36,67 +36,78 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      display: 'flex',
-      alignItems:"center",
-      marginRight:"auto",
-      marginLeft:"auto",
+        display: 'flex',
+        alignItems: "center",
+        marginRight: "auto",
+        marginLeft: "auto",
     },
 
     details: {
-      display: 'flex',
-      flexDirection: 'column',
+        display: 'flex',
+        flexDirection: 'column',
     },
 
     content: {
-      flex: '1 0 auto',
+        flex: '1 0 auto',
     },
 
     cover: {
-      width: '50vh',
-      height:'70vh',
+        width: '50vh',
+        height: '70vh',
 
     },
-    
-  }));
-  
-  const RestoInfo =()=> {
+
+}));
+
+const RestoInfo = ({ name, type, avCost, address, phone, imageUrl, close }) => {
     const classes = useStyles();
-  
-    return (
-        <ThemeProvider theme={theme}>
-      <Card className={classes.root}>
-        <CardMedia
-          className={classes.cover}
-          image="/photos/images.jpg"
-          title="Bebabel"
-        />
-        <div className={classes.details}>
-          <CardContent className={classes.content}>
-          <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>Type</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>Average Cost for two</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>B11 Center, Block B, 
-                  Minet El Hosn, Beirut District</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>Phone</TableCell>
-            </TableRow>
-          </TableHead>
-        </Table>
-          </CardContent>
-        </div>
-      </Card>
-      </ThemeProvider>
+
+    return ( <
+        ThemeProvider theme = { theme } >
+        <
+        Card className = { classes.root }
+        onClick = { close } >
+        <
+        CardMedia className = { classes.cover }
+        image = { imageUrl }
+        title = { name }
+        /> <
+        div className = { classes.details } >
+        <
+        CardContent className = { classes.content } >
+        <
+        Table >
+        <
+        TableHead >
+        <
+        TableRow >
+        <
+        TableCell > Name: { name } < /TableCell> <
+        /TableRow> <
+        TableRow >
+        <
+        TableCell > Type: { type } < /TableCell> <
+        /TableRow> <
+        TableRow >
+        <
+        TableCell > Average Cost
+        for two: { avCost } < /TableCell> <
+        /TableRow> <
+        TableRow >
+        <
+        TableCell > Address: { address } < /TableCell> <
+        /TableRow> <
+        TableRow >
+        <
+        TableCell > Phone: { phone } < /TableCell> <
+        /TableRow> <
+        /TableHead> <
+        /Table> <
+        /CardContent> <
+        /div> <
+        /Card> <
+        /ThemeProvider>
     );
-  }
+}
 
 export default RestoInfo;
