@@ -49,17 +49,5 @@ import java.util.Date;
 
 
 
-        Date bebabelDate = new Date(2020,11,21);
-        Visit bebabelVisit= new Visit(bebabel,bebabelDate);
-        visitRepository.save(bebabelVisit);
-        Date macdonaldDate = new Date(2020,9,18);
-        Visit macdonaldVisit= new Visit(macdonald,macdonaldDate);
-        visitRepository.save(macdonaldVisit);
-        Date roadsterDate = new Date(2019,12,19);
-        Visit roadsterVisit= new Visit(roadster,roadsterDate);
-        visitRepository.save(roadsterVisit);
-        Date tsunamiDate = new Date(2019,9,20);
-        Visit tsunamiVisit= new Visit(tsunami,tsunamiDate);
-        visitRepository.save(tsunamiVisit);
     }
 }
