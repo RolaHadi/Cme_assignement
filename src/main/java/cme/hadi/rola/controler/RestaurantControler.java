@@ -4,6 +4,8 @@ import cme.hadi.rola.exception.ResourceNotFoundException;
 import cme.hadi.rola.model.Restaurant;
 import cme.hadi.rola.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,8 +27,8 @@ public class RestaurantControler {
     }
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/restaurants")
-    public List<Restaurant> listRestaurant() {
-        return restaurantRepository.findAll();
+    public Page<Restaurant> listRestaurant(Pageable page) {
+        return restaurantRepository.findAll(page);
     }
 
     @ResponseStatus(HttpStatus.OK)
@@ -47,5 +49,19 @@ public class RestaurantControler {
     public List<Restaurant> getByType(@PathVariable String type) {
         return restaurantRepository.findByType(type);
     }
+
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/restaurants/search/{prefix}")
+    public List<Restaurant> getByPrefix(@PathVariable String prefix) {
+        return restaurantRepository.findByNameContainingIgnoreCase(prefix).toList();
+    }
+
+
+
+
+
+
+
     }
 
