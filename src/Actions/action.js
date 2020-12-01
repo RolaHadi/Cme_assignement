@@ -3,6 +3,18 @@ export const loadResto = () => ({
     type: LOAD_RESTO
 });
 
+export const LOAD_RESTO_TYPE = "LOAD_RESTO_TYPE";
+export const loadRestoType = (typeResto) => ({
+    type: LOAD_RESTO_TYPE,
+    payload: typeResto
+});
+
+
+export const LOAD_RESTO_SEARCH = "LOAD_RESTO_SEARCH";
+export const loadRestoSearch = (prefix) => ({
+    type: LOAD_RESTO_SEARCH,
+    payload: prefix
+});
 
 export const SET_RESTO = "SET_RESTO";
 export const setResto = (data) => ({
@@ -38,3 +50,9 @@ export const addVisit = (visit) => {
     };
     return action;
 };
+
+export const SET_PAGE = "SET_SEARCH"
+export const setPage = (page) => ({
+    type: SET_PAGE,
+    payload: page
+})

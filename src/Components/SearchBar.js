@@ -13,6 +13,9 @@ import Button from '@material-ui/core/Button';
 import { blue, orange } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import { loadRestoSearch, loadRestoType } from '../Actions/action';
+import { useDispatch } from "react-redux";
+
 
 const theme = createMuiTheme({
     palette: {
@@ -46,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-between",
         alignItems: "center",
         alignContent: "center",
+        flexDirection: "row",
         flex: 1,
     },
 
@@ -101,13 +105,25 @@ const useStyles = makeStyles((theme) => ({
 
 const SearchBar = () => {
     const classes = useStyles();
-    const [age, setAge] = React.useState('');
+    const [type, setType] = React.useState('');
+    const [search, setSearch] = React.useState('');
     const [open, setOpen] = React.useState(false);
-
+    const dispatch = useDispatch();
 
     const handleChange = (event) => {
-        setAge(event.target.value);
+        setType(event.target.value);
+        dispatch(loadRestoType(event.target.value));
     };
+
+    const handleSearch = (event) => {
+        setSearch(event.target.value);
+    }
+
+    const handleButton = () => {
+        dispatch(loadRestoSearch(search));
+    }
+
+
 
     const handleClose = () => {
         setOpen(false);
@@ -142,6 +158,8 @@ const SearchBar = () => {
         <
         /div> <
         InputBase placeholder = "Search…"
+        value = { search }
+        onChange = { handleSearch }
         classes = {
             {
                 root: classes.inputRoot,
@@ -151,46 +169,46 @@ const SearchBar = () => {
         inputProps = {
             { 'aria-label': 'search' }
         }
-        />  < /
-        div > <
-        /Box>  <
+        />  <
+        /div >   <
+        /Box>   <
         Box p = { 1 }
         m = { 0.1 } >
         <
         FormControl className = { classes.formControl } >
         <
-        InputLabel id = "select-label-type" > Types < /InputLabel> <
+        InputLabel id = "select-label-type" > Types < /InputLabel>  <
         Select labelId = "select-type"
         id = "open-select"
         open = { open }
         onClose = { handleClose }
         onOpen = { handleOpen }
-        value = { age }
+        value = { type }
         onChange = { handleChange } >
         <
         MenuItem value = "" >
         <
-        em > None < /em> < /
-        MenuItem > <
+        em > None < /em> <
+        /MenuItem>  <
         MenuItem value = { "lebanese" } > Lebanese < /MenuItem> <
-        MenuItem value = { "italian" } > Italian < /MenuItem>  <
-        MenuItem value = { "chinese" } > Chinese < /MenuItem>  < /
-        Select > <
-        /FormControl>  < /
-        Box > <
+        MenuItem value = { "american" } > American < /MenuItem>  <
+        MenuItem value = { "asian" } > Asian < /MenuItem>   <
+        /Select >  <
+        /FormControl>  <
+        /Box>  <
         Box p = { 1 }
         m = { 0.1 } >
         <
         Button variant = "contained"
         color = "secondary"
+        onClick = { handleButton }
         disableElevation >
-        Search <
-        /Button> < /
-        Box > <
-        /Box> < /
-        Toolbar > <
-        /AppBar> < /
-        ThemeProvider > <
+        Search < /Button >  <
+        /Box > <
+        /Box> <
+        /Toolbar> <
+        /AppBar > <
+        /ThemeProvider >  <
         /div>
 
 

@@ -68,7 +68,7 @@ const Resto = ({ resto }) => {
         evt.stopPropagation();
 
         var today = new Date();
-        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var date = today;
 
         const data = {
 

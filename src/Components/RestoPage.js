@@ -6,6 +6,8 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Resto from './Resto';
 import ListResto from './ListResto';
+import Pagina from "./Pagination";
+
 
 const useStyles = makeStyles({
     root: {
@@ -23,6 +25,8 @@ function RestoPage() {
 
     const classes = useStyles();
     return ( <
+        div >
+        <
         Grid container spacing = { 6 } >
         <
         Grid container item xs = { 12 } >
@@ -41,8 +45,10 @@ function RestoPage() {
         ListResto / >
         <
         /Grid>  <
-        /Grid >
-
+        /Grid > <
+        Pagina / >
+        <
+        /div >
     );
 }
 

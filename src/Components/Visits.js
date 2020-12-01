@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const columns = [
-    { field: 'restaurant', headerName: 'Restaurant', width: 130 }, { field: 'visitDate', headerName: "Date of Visit", type: 'date', width: 130 }
+    { field: 'restaurant', headerName: 'Restaurant', width: 130 }, { field: 'visitDate', headerName: "Date of Visit", type: 'date', width: 300 }
 ];
 
 const Visits = () => {
@@ -78,12 +78,13 @@ const Visits = () => {
         ThemeProvider theme = { theme } >
         <
         div style = {
-            { height: 600, width: '100%' } } >
+            { height: 600, width: '100%' }
+        } >
         <
         DataGrid rows = { visitslist }
         columns = { columns }
-        />  <
-        /div> <
+        />  < /
+        div > <
         /ThemeProvider >
     );
 

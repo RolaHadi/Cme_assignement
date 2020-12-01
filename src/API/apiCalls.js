@@ -1,40 +1,39 @@
 import api from './index'
 
-export const getResto = async(restaurants) => {
+export const getResto = async(page) => {
     try {
+        console.log(page)
         console.log("i am in api call")
-        const data = await api.get('api/restaurants');
+        const data = await api.get(`api/restaurants/?page=${page}&size=4`);
         console.log(data);
-        return data.data;
+        return data.data.content;
     } catch (error) {
         console.log(error);
     }
 
 }
 
-export const getRestosByName = async(restaurants) => {
+export const getRestosByName = async(name) => {
     try {
-        const Name = restaurants.action.action.name;
-        const data = await api.get(`api/restaurants/name/${Name}`);
+        console.log(name);
+        const data = await api.get(`api/restaurants/name/${name}`);
         return data.data;
     } catch (error) {
         console.log(error);
     }
 }
 
-export const getRestosByType = async(restaurants) => {
+export const getRestosByType = async(typeResto) => {
     try {
-        const type = restaurants.action.payload.type
-        const data = await api.get(`api/restaurants/type/${type}`);
+        const data = await api.get(`api/restaurants/type/${typeResto}`);
         return data.data;
     } catch (error) {
         console.log(error);
     }
 }
 
-export const getRestosById = async(restaurant) => {
+export const getRestosById = async(id) => {
     try {
-        const id = restaurant.action.payload.id
         const data = await api.get(`api/restaurants/${id}`);
         return data.data;
     } catch (error) {
@@ -43,7 +42,17 @@ export const getRestosById = async(restaurant) => {
 }
 
 
-export const getVisits = async(visits) => {
+export const getRestosByPrefix = async(prefix) => {
+    try {
+        console.log(prefix)
+        const data = await api.get(`api/restaurants/search/${prefix}`);
+        return data.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const getVisits = async() => {
     try {
         console.log("i am in api call")
         const data = await api.get('api/visits');

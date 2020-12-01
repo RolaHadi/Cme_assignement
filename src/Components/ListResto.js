@@ -39,7 +39,9 @@
 
 
   const ListResto = () => {
-      const Restos = useSelector(state => state.Restaurants.Restos);
+      const restos = useSelector(state => state.Restaurants.restos);
+      const page = useSelector(state => state.Restaurants.page);
+      console.log(restos)
       const classes = useStyles();
       const [displayInfo, setDisplayInfo] = useState(false)
       const dispatch = useDispatch();
@@ -59,28 +61,28 @@
       };
 
 
-
-
       return (
 
           <
           ThemeProvider theme = { theme } >
           <
           Box className = { classes.root } > {
-              Restos.map(resto => ( <
+              restos.map(resto => ( <
                   Box p = { 1 }
                   m = { 1 }
                   key = { resto.id } >
                   <
                   Link onClick = {
-                      () => handleOpenInfo(resto.id) }
+                      () => handleOpenInfo(resto.id)
+                  }
                   to = "" >
                   <
                   Resto key = { resto.id }
                   resto = { resto }
                   />  <
-                  /Link> <
+                  /Link > <
                   Dialog fullScreen open = { openInfo === resto.id }
+                  className = { classes }
                   onClose = { handleCloseInfo }
                   key = { resto.id } >
                   <
@@ -92,9 +94,9 @@
                   phone = { resto.phone }
                   imageUrl = { resto.imageUrl }
                   close = { handleCloseInfo }
-                  /> <
-                  /Dialog> <
-                  /Box >
+                  />  </Dialog >
+                  <
+                  /Box>
 
 
 

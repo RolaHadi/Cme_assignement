@@ -11,12 +11,13 @@ export function* LoadRestoWatcher() {
 
 }
 
-function* LoadRestoApi() {
+function* LoadRestoApi(page) {
     let data;
-    console.log("in saga loader")
+
+    console.log("in saga page loader")
 
     try {
-        data = yield call(getResto);
+        data = yield call(getResto, page.payload);
         yield put(setResto(data));
         console.log(data);
     } catch (error) {
