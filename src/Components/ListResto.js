@@ -7,6 +7,10 @@
   import { useDispatch, useSelector } from "react-redux";
   import { Link } from "react-router-dom";
   import RestoInfo from "./RestoInfo";
+
+
+  //   component that dispatch the restos
+
   const theme = createMuiTheme({
 
       palette: {
@@ -27,12 +31,15 @@
   });
 
   const useStyles = makeStyles({
-      root: {
-          minWidth: 275,
+      RestoContainer: {
+          paddingTop: "20px",
+          paddingLeft: "100px",
+          paddingRight: "100px",
+          display: "flex",
+          justifyContent: "center",
           alignItems: "center",
-          marginRight: "auto",
-          marginLeft: "auto",
-      }
+          flexFlow: "row wrap"
+      },
 
 
   });
@@ -43,12 +50,11 @@
       const page = useSelector(state => state.Restaurants.page);
       console.log(restos)
       const classes = useStyles();
-      const [displayInfo, setDisplayInfo] = useState(false)
       const dispatch = useDispatch();
       useEffect(() => {
-          dispatch(loadResto());
+          dispatch(loadResto(page));
 
-      }, [])
+      }, [page])
 
       const [openInfo, setOpenInfo] = useState(false);
 
@@ -66,7 +72,7 @@
           <
           ThemeProvider theme = { theme } >
           <
-          Box className = { classes.root } > {
+          Box className = { classes.RestoContainer } > {
               restos.map(resto => ( <
                   Box p = { 1 }
                   m = { 1 }
@@ -94,20 +100,15 @@
                   phone = { resto.phone }
                   imageUrl = { resto.imageUrl }
                   close = { handleCloseInfo }
-                  />  </Dialog >
-                  <
+                  />  <
+                  /Dialog > <
                   /Box>
-
-
-
-
               ))
           } <
           /Box> <
           /ThemeProvider >
 
       )
-
   }
 
   export default ListResto;

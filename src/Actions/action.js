@@ -1,6 +1,7 @@
 export const LOAD_RESTO = "LOAD_RESTO";
-export const loadResto = () => ({
-    type: LOAD_RESTO
+export const loadResto = (page) => ({
+    type: LOAD_RESTO,
+    payload: page
 });
 
 export const LOAD_RESTO_TYPE = "LOAD_RESTO_TYPE";
@@ -51,8 +52,19 @@ export const addVisit = (visit) => {
     return action;
 };
 
-export const SET_PAGE = "SET_SEARCH"
+export const SET_PAGE = "SET_PAGE"
 export const setPage = (page) => ({
     type: SET_PAGE,
     payload: page
+
 })
+
+export const SET_NUMBER_PAGE = "SET_NUMBER_PAGE"
+export const setNumberPage = (nbPage) => ({
+        type: SET_NUMBER_PAGE,
+        payload: nbPage
+
+    }
+
+
+)

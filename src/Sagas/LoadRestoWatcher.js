@@ -1,6 +1,5 @@
 import { takeLatest, call, put } from 'redux-saga/effects'
-
-import { LOAD_RESTO, setResto } from '../Actions/action';
+import { LOAD_RESTO, setResto, setNumberPage } from '../Actions/action';
 import { getResto } from '../API/apiCalls'
 
 
@@ -18,8 +17,9 @@ function* LoadRestoApi(page) {
 
     try {
         data = yield call(getResto, page.payload);
-        yield put(setResto(data));
-        console.log(data);
+        yield put(setResto(data.content));
+        yield put(setNumberPage(data.totalPages));
+        console.log("in watcher" + data.totalPages);
     } catch (error) {
         console.log(error);
     }

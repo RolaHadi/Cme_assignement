@@ -46,8 +46,11 @@ function RestoPage() {
         <
         /Grid>  <
         /Grid > <
+        Grid className = { classes.RestoContainer } >
+        <
         Pagina / >
         <
+        /Grid> <
         /div >
     );
 }
