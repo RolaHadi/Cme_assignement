@@ -1,5 +1,7 @@
 import { SET_PAGE, SET_NUMBER_PAGE, SET_RESTO, LOAD_RESTO_TYPE, LOAD_RESTO_SEARCH } from '../Actions/action'
 
+
+
 const initialState = {
     restos: [],
     error: false,

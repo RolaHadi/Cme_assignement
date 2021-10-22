@@ -19,22 +19,17 @@ const useStyles = makeStyles({
 function App() {
 
     const classes = useStyles();
-    return ( <
-        Router >
-        <
-        div className = "App" >
-        <
-        Switch >
-        <
-        Route path = "/"
-        exact component = { RestoPage }
-        /> <
-        Route path = "/visits"
-        exact component = { VisitPage }
-        /> <
-        /Switch>  <
-        /div>  <
-        /Router>
+    return (
+         <Router >
+        <div className = "App" >
+        <Switch >
+        <Route path = "/"
+            exact component = { RestoPage }/>
+        <Route path = "/visits"
+            exact component = { VisitPage }/>
+        </Switch> 
+        </div> 
+        </Router>
     );
 }
 

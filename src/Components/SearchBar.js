@@ -104,6 +104,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SearchBar = () => {
+
     const classes = useStyles();
     const [type, setType] = React.useState('');
     const [search, setSearch] = React.useState('');
@@ -123,8 +124,6 @@ const SearchBar = () => {
         dispatch(loadRestoSearch(search));
     }
 
-
-
     const handleClose = () => {
         setOpen(false);
     };
@@ -135,29 +134,19 @@ const SearchBar = () => {
 
     return (
 
-        <
-        div className = { classes.root } >
-        <
-        ThemeProvider theme = { theme } >
-        <
-        AppBar position = "static"
+        <div className = { classes.root }>
+        <ThemeProvider theme = { theme } >
+        <AppBar position = "static"
         color = "primary" >
-        <
-        Toolbar >
-        <
-        Box className = { classes.headers } >
-        <
-        Box p = { 1 }
+        <Toolbar >
+        <Box className = { classes.headers } >
+        <Box p = { 1 }
         m = { 0.1 } >
-        <
-        div className = { classes.search } >
-        <
-        div className = { classes.searchIcon } >
-        <
-        SearchIcon / >
-        <
-        /div> <
-        InputBase placeholder = "Search…"
+        <div className = { classes.search } >
+        <div className = { classes.searchIcon } >
+        <SearchIcon />
+        </div> 
+        <InputBase placeholder = "Search…"
         value = { search }
         onChange = { handleSearch }
         classes = {
@@ -169,47 +158,41 @@ const SearchBar = () => {
         inputProps = {
             { 'aria-label': 'search' }
         }
-        />  <
-        /div >   <
-        /Box>   <
-        Box p = { 1 }
+        /> 
+         </div >  
+         </Box>  
+         <Box p = { 1 }
         m = { 0.1 } >
-        <
-        FormControl className = { classes.formControl } >
-        <
-        InputLabel id = "select-label-type" > Types < /InputLabel>  <
-        Select labelId = "select-type"
+        <FormControl className = { classes.formControl } >
+        <InputLabel id = "select-label-type" > Types </InputLabel> 
+        <Select labelId = "select-type"
         id = "open-select"
         open = { open }
         onClose = { handleClose }
         onOpen = { handleOpen }
         value = { type }
         onChange = { handleChange } >
-        <
-        MenuItem value = "" >
-        <
-        em > None < /em> <
-        /MenuItem>  <
-        MenuItem value = { "lebanese" } > Lebanese < /MenuItem> <
-        MenuItem value = { "american" } > American < /MenuItem>  <
-        MenuItem value = { "asian" } > Asian < /MenuItem>   <
-        /Select >  <
-        /FormControl>  <
-        /Box>  <
-        Box p = { 1 }
-        m = { 0.1 } >
-        <
-        Button variant = "contained"
+        <MenuItem value = "" >
+        <em > None </em>
+         </MenuItem> 
+         <MenuItem value = { "lebanese" } > Lebanese </MenuItem>
+          < MenuItem value = { "american" } > American </MenuItem> 
+           <MenuItem value = { "asian" } > Asian </MenuItem>  
+           </Select > 
+           </FormControl> 
+            </Box> 
+            <Box p = { 1 } m = { 0.1 } >
+        < Button variant = "contained"
         color = "secondary"
         onClick = { handleButton }
         disableElevation >
-        Search < /Button >  <
-        /Box > <
-        /Box> <
-        /Toolbar> <
-        /AppBar > <
-        /ThemeProvider >  <
-        /div>
+        Search </Button > 
+        </Box >
+         </Box>
+          </Toolbar>
+           </AppBar >
+            </ThemeProvider > 
+            </div>
 
 
     );

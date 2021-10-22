@@ -29,77 +29,65 @@ const theme = createMuiTheme({
 const useStyles = makeStyles((theme) => ({
 
     details: {
-        display: 'flex',
-        flexDirection: 'column',
+      display: 'flex',
+      flexDirection: 'column',
     },
 
     cover: {
-        width: '50vh',
-        height: '70vh',
+      width: '50vh',
+      height:'70vh',
 
     },
 
-    RestoContainer: {
-        paddingTop: "20px",
-        paddingLeft: "100px",
-        paddingRight: "100px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexFlow: "row wrap"
+    RestoContainer:{
+      paddingTop:"20px",
+      paddingLeft:"100px",
+      paddingRight:"100px",
+      display:"flex",
+      justifyContent:"center",
+      alignItems:"center",
+      flexFlow:"row wrap"    
     },
-
-}));
-
-const RestoInfo = ({ name, type, avCost, address, phone, imageUrl, close }) => {
+    
+  }));
+  
+  const RestoInfo =({ name, type, avCost, address, phone, imageUrl, close})=> {
     const classes = useStyles();
-
-    return ( <
-        ThemeProvider theme = { theme } >
-        <
-        Card className = { classes.RestoContainer }
-        onClick = { close } >
-        <
-        CardMedia className = { classes.cover }
-        image = { imageUrl }
-        title = { name }
-        /> <
-        div className = { classes.details } >
-        <
-        CardContent className = { classes.content } >
-        <
-        Table >
-        <
-        TableHead >
-        <
-        TableRow >
-        <
-        TableCell > Name: { name } < /TableCell> < /
-        TableRow > <
-        TableRow >
-        <
-        TableCell > Type: { type } < /TableCell> < /
-        TableRow > <
-        TableRow >
-        <
-        TableCell > Average Cost
-        for two: { avCost } < /TableCell> < /
-        TableRow > <
-        TableRow >
-        <
-        TableCell > Address: { address } < /TableCell> < /
-        TableRow > <
-        TableRow >
-        <
-        TableCell > Phone: { phone } < /TableCell> < /
-        TableRow > <
-        /TableHead> < /
-        Table > <
-        /CardContent> < /
-        div > <
-        /Card> < /
-        ThemeProvider >
+  
+    return (
+        <ThemeProvider theme={theme}>
+      <Card className={classes.RestoContainer} onClick={close}>
+        <CardMedia
+          className={classes.cover}
+          image={imageUrl}
+          title={name}
+        />
+        <div className={classes.details}>
+          <CardContent className={classes.content}>
+          <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Name:{name}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell> Type:{type}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Average Cost for two : {avCost}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Address: {address}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Phone: {phone}</TableCell>
+            </TableRow>
+          </TableHead>
+        </Table>
+          </CardContent>
+        </div>
+      </Card>
+      </ThemeProvider>
     );
-}
+  }
 
 export default RestoInfo;

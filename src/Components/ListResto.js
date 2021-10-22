@@ -9,8 +9,8 @@
   import RestoInfo from "./RestoInfo";
 
 
-  //   component that dispatch the restos
-
+//   component that dispatch the restos
+  
   const theme = createMuiTheme({
 
       palette: {
@@ -31,14 +31,14 @@
   });
 
   const useStyles = makeStyles({
-      RestoContainer: {
-          paddingTop: "20px",
-          paddingLeft: "100px",
-          paddingRight: "100px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexFlow: "row wrap"
+      RestoContainer:{
+        paddingTop:"20px",
+        paddingLeft:"100px",
+        paddingRight:"100px",
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
+        flexFlow:"row wrap"    
       },
 
 
@@ -69,44 +69,38 @@
 
       return (
 
-          <
-          ThemeProvider theme = { theme } >
-          <
-          Box className = { classes.RestoContainer } > {
-              restos.map(resto => ( <
-                  Box p = { 1 }
+          <ThemeProvider theme = { theme } >
+          < Box className = { classes.RestoContainer } > 
+          {restos.map(resto => (
+               <Box p = { 1 }
                   m = { 1 }
                   key = { resto.id } >
-                  <
-                  Link onClick = {
+                  <Link onClick = {
                       () => handleOpenInfo(resto.id)
                   }
                   to = "" >
                   <
                   Resto key = { resto.id }
-                  resto = { resto }
-                  />  <
-                  /Link > <
-                  Dialog fullScreen open = { openInfo === resto.id }
+                  resto = { resto }/> 
+                   </Link >
+                   <Dialog fullScreen open = { openInfo === resto.id }
                   className = { classes }
                   onClose = { handleCloseInfo }
                   key = { resto.id } >
-                  <
-                  RestoInfo key = { resto.id }
+                  <RestoInfo key = { resto.id }
                   name = { resto.name }
                   type = { resto.type }
                   avCost = { resto.avCost }
                   address = { resto.address }
                   phone = { resto.phone }
                   imageUrl = { resto.imageUrl }
-                  close = { handleCloseInfo }
-                  />  <
-                  /Dialog > <
-                  /Box>
+                  close = { handleCloseInfo }/> 
+                   </Dialog >
+                  </Box>
               ))
-          } <
-          /Box> <
-          /ThemeProvider >
+          } 
+          </Box>
+           </ThemeProvider >
 
       )
   }

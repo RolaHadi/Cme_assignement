@@ -24,34 +24,24 @@ const useStyles = makeStyles({
 function RestoPage() {
 
     const classes = useStyles();
-    return ( <
-        div >
-        <
-        Grid container spacing = { 6 } >
-        <
-        Grid container item xs = { 12 } >
-        <
-        Nav / >
-        <
-        /Grid>   <
-        Grid container item xs = { 12 } >
-        <
-        SearchBar / >
-        <
-        /Grid>   <
-        Grid container item xs = { 12 }
+    return ( 
+        <div>
+        <Grid container spacing = { 6 } >
+        <Grid container item xs = { 12 } >
+        <Nav />
+        </Grid>  
+        <Grid container item xs = { 12 } >
+        <SearchBar />
+        </Grid>  
+        <Grid container item xs = { 12 }
         className = { classes.RestoContainer } >
-        <
-        ListResto / >
-        <
-        /Grid>  <
-        /Grid > <
-        Grid className = { classes.RestoContainer } >
-        <
-        Pagina / >
-        <
-        /Grid> <
-        /div >
+        <ListResto />
+        </Grid> 
+        </Grid >
+        <Grid > 
+        <Pagina />
+        </Grid>
+        </div >
     );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
+import {Container} from '@material-ui/core';
 import Nav from './Nav';
 import SearchBar from './SearchBar';
 import Grid from '@material-ui/core/Grid';
@@ -10,6 +10,7 @@ const useStyles = makeStyles({
     root: {
         minWidth: 275,
     },
+
     RestoContainer: {
         display: "flex",
         alignItems: "center",
@@ -21,26 +22,20 @@ const useStyles = makeStyles({
 function VisitPage() {
 
     const classes = useStyles();
-    return ( <
-        Grid container spacing = { 6 } >
-        <
-        Grid container item xs = { 12 } >
-        <
-        Nav / >
-        <
-        /Grid>   <
-        Grid container item xs = { 12 } >
-        <
-        SearchBar / >
-        <
-        /Grid>   <
-        Grid container item xs = { 12 }
-        className = { classes.RestoContainer } >
-        <
-        Visits / >
-        <
-        /Grid>  <
-        /Grid >
+    return ( 
+              
+        <Grid container spacing = { 6 }>
+        <Grid container item xs = { 12 }>
+            <Nav/>
+        </Grid>  
+        <Grid container item xs = { 12 }>
+            <SearchBar />
+        </Grid>  
+        <Grid container item xs = { 12 }
+                className = {classes.RestoContainer } >
+            <Visits />
+        </Grid> 
+        </Grid >
 
     );
 }

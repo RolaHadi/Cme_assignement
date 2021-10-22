@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const columns = [
-    { field: 'restaurant', headerName: 'Restaurant', width: 130 }, { field: 'visitDate', headerName: "Date of Visit", type: 'date', width: 300 }
+    { field: 'restaurant', headerName: 'Restaurant', width: 130 }, { field: 'visitDate', headerName:"Date of Visit", type: 'date',width: 300  }
 ];
 
 const Visits = () => {
@@ -61,7 +61,7 @@ const Visits = () => {
         getVisits();
     }, [])
 
-    const getVisits = () => {
+    const getVisits=() => {
         dispatch(loadVisits());
     }
 
@@ -69,23 +69,18 @@ const Visits = () => {
 
     let visitslist = [];
     visitslist = VisitsData.map(visit => ({
-        id: visit.id,
+        id:visit.id,
         restaurant: visit.restaurant.name,
         visitDate: visit.date
     }))
 
-    return ( <
-        ThemeProvider theme = { theme } >
-        <
-        div style = {
-            { height: 600, width: '100%' }
-        } >
-        <
-        DataGrid rows = { visitslist }
-        columns = { columns }
-        />  < /
-        div > <
-        /ThemeProvider >
+    return (
+        <ThemeProvider theme = { theme } >
+  <div style={{ height: 600, width: '100%' }}>
+        <DataGrid rows = { visitslist }
+        columns = { columns }/> 
+        </div>
+        </ThemeProvider >
     );
 
 }
