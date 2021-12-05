@@ -19,14 +19,13 @@ public class Visit {
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private Date date;
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name="restaurantVisits")
-    private Restaurant restaurant;
+    Visitor visitor;
+    ILocation location;
+    Date date;
 
-
-    public Visit(Restaurant restaurant, Date date) {
-        this.restaurant = restaurant;
+    public Visit(Visitor visitor, ILocation location, Date date) {
+        this.visitor = visitor;
+        this.location = location;
         this.date = date;
     }
 

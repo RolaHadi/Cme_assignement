@@ -21,6 +21,7 @@ public class VisitControler {
     public void createVisit(@Valid @RequestBody Visit visit) {
         visitRepository.save(visit);
     }
+
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/visits")
     public List<Visit> listVisits() {
